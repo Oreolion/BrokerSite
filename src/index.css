@@ -1,0 +1,560 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  scroll-behavior: smooth;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+:root {
+  --text: #000000;
+  --background: #9d977b;
+  --background-secondary: #2a3646;
+  --background-primary: #131920;
+  --primary: #f9a23f;
+  --secondary: #f7a08d;
+  --accent: #ff8fc8;
+}
+
+html {
+  font-size: 70%;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+button,
+.btn {
+  cursor: pointer;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.4rem 2rem;
+  width: 9rem;
+  height: 4rem;
+  font-weight: bold;
+  border-radius: 8px;
+  &:hover {
+    background-color: #131920;
+    border: 2px solid var(--primary);
+  }
+}
+
+header {
+  padding: 2rem 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #131920;
+  position: relative;
+}
+
+.logo {
+  color: #888;
+}
+
+.logo h1 {
+  font-size: 3.9rem;
+}
+
+.logo p {
+  white-space: nowrap;
+  font: 0.4rem;
+}
+
+.widgetbox {
+  width: 72%;
+  position: absolute;
+  top: 20%;
+  left: 11%;
+}
+
+.header__btn {
+  display: flex;
+  gap: 2rem;
+}
+
+.header__btn button {
+  cursor: pointer;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.4rem 2rem;
+  width: 9rem;
+  height: 4rem;
+  font-weight: bold;
+}
+
+/* NavBar */
+
+.navlists {
+  color: #fff;
+  padding: 0 1rem;
+  background-color: var(--background-secondary);
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.navlists li {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.6rem 6rem;
+
+  &:hover {
+    background-color: #fff;
+    color: var(--primary);
+  }
+}
+
+#menubtn {
+  display: none;
+}
+
+.mobile__menu {
+  display: none;
+}
+
+/* Homepage section */
+
+.homepage__container {
+  background: url(/src/assets/images/istockphoto-1294303237-612x612.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.homepage__container h1 {
+  color: #ddd;
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 80rem;
+}
+
+.homepage__container h1 span {
+  color: var(--primary);
+}
+
+.homepage__container .homepage__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.homepage__container button {
+  height: 5rem;
+  width: 15rem;
+  white-space: nowrap;
+  &:hover {
+    background-color: var(--background-secondary);
+  }
+}
+
+.homepage__container .bottombox {
+  background-color: var(--background-secondary);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -19%;
+  gap: 2rem;
+  border-radius: 1rem;
+  color: #ccc;
+}
+
+.homepage__container .bottombox .box {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage__container .bottombox .box p {
+  margin-top: 0.6rem;
+  max-width: 20rem;
+  font-weight: bold;
+}
+
+/* Homepage section 2 */
+
+.homepagesection2 {
+  padding: 3rem;
+  padding-top: 12rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--background-primary);
+  width: 100%;
+  gap: 4rem;
+}
+
+.homepagesection2 .box1 {
+  width: 50%;
+}
+
+.homepagesection2 .box1 .img__box {
+  width: 100%;
+}
+
+.homepagesection2 .box1 .img__box img {
+  width: 100%;
+}
+
+.homepagesection2 .box2 {
+  color: #fff;
+  width: 50%;
+}
+
+.homepagesection2 .box2 h1 {
+  margin-bottom: 1rem;
+  font-size: 2.6rem;
+}
+
+.homepagesection2 .box2 ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.homepagesection2 .box2 ul li {
+  border-right: 1px solid var(--primary);
+  padding: 0 1rem;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.homepagesection2 .box2 ul li:first-child {
+  color: var(--primary);
+}
+
+.homepagesection2 .box2 p {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  max-width: 43rem;
+}
+
+.homepagesection2 .box2 button {
+  width: 12rem;
+}
+
+/* home page section 3 */
+
+.homepagesection3 {
+  background-color: var(--background-secondary);
+  background-color: var(--background-primary);
+  color: #ccc;
+}
+
+.homepagesection3 .inner__box {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 22rem;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.homepagesection3 .inner__box .box {
+  padding: 3rem;
+  width: 25rem;
+  height: 17rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-primary);
+  background-color: var(--background-secondary);
+}
+
+.homepagesection3 .box p {
+  max-width: 22rem;
+  font-size: 1.3rem;
+}
+
+.homepagesection3 .box h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.homepagesection3 .box .icon {
+  color: var(--primary);
+}
+
+/* Trading Plan section */
+
+.tradingplansection {
+  background-color: var(--background-secondary);
+  color: #ccc;
+}
+
+.tradingplansection h1 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #888;
+  text-align: center;
+}
+
+.tradingplansection .innerbox {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 30%;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.tradingplansection .innerbox .box {
+  background-color: var(--background-primary);
+  padding: 2rem;
+  max-width: 28rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tradingplansection .innerbox .box h2,
+.tradingplansection .innerbox .box h3 {
+  margin-bottom: 1.2rem;
+  color: #ccc;
+  font-size: 1.6rem;
+}
+
+.tradingplansection .innerbox .box h1 {
+  margin-bottom: 1.2rem;
+  color: #ccc;
+  font-size: 1.9rem;
+}
+
+.tradingplansection .innerbox .box p {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.tradingplansection .innerbox .box button {
+  width: 13rem;
+}
+
+/* Homepage section 4 */
+
+.homepagesection4 {
+  background: url(/src/assets/images/pexels-rdne-stock-project-8369687.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.homepagesection4 h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.homepagesection4 p {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.homepagesection4 button {
+  width: 16rem;
+  height: 6rem;
+}
+
+/* Home footer section */
+
+footer {
+  background-color: var(--background-primary);
+  color: #ccc;
+  padding: 2rem 7%;
+}
+
+footer .inner__footer {
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+}
+
+footer .inner__footer .box {
+  list-style: none;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+footer p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 760px) {
+  section {
+    padding: 2rem;
+  }
+
+  header {
+    padding: 2rem;
+  }
+
+  .navlists {
+    display: none;
+  }
+
+  .header__btn {
+    display: none;
+  }
+
+  .widgetbox {
+    left: 18%;
+  }
+
+  #menubtn {
+    display: block;
+    color: #888;
+    z-index: 11111;
+    position: fixed;
+    top: 6%;
+    right: 4%;
+  }
+
+  .mobile__menu {
+    display: block;
+    transition: transform 3s ease-in-out;
+    transform: translateX(0);
+  }
+
+  .nav {
+    padding-top: 17rem;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .nav li {
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    &:hover {
+      color: var(--primary);
+      letter-spacing: 0.3rem;
+    }
+  }
+
+  .active {
+    height: 100%;
+    width: 24rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: var(--background-secondary);
+    opacity: 0.85;
+    transition: transform 3s ease-in-out;
+    transform: translateX(0);
+    z-index: 111;
+  }
+  .mobilemenu-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobilemenu-btn button {
+    cursor: pointer;
+    background: var(--primary);
+    color: #fff;
+    padding: 0.4rem 2rem;
+    width: 9rem;
+    height: 3rem;
+    display: flex;
+    margin: 1rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .homepage__container h1 {
+    font-size: 2.7rem;
+  }
+
+  .homepage__container button {
+    height: 4rem;
+    width: 15rem;
+    font-weight: normal;
+  }
+
+  .homepagesection2 {
+    flex-direction: column;
+    padding-left: 1rem;
+  }
+
+  .homepagesection2 .box1,
+  .homepagesection2 .box2 {
+    width: 100%;
+  }
+
+  .homepagesection2 .box2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .homepagesection2 .box2 h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .homepagesection2 .box2 p {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+}
