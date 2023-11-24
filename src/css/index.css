@@ -105,7 +105,6 @@ header {
 /* NavBar */
 
 .navlists {
-  color: #fff;
   padding: 0 1rem;
   background-color: var(--background-secondary);
   display: flex;
@@ -121,10 +120,21 @@ header {
   font-weight: bold;
   padding: 0.6rem 6rem;
 
+
   &:hover {
     background-color: #fff;
     color: var(--primary);
   }
+}
+
+.navlists li .link {
+    color: #fff;
+    &:hover {
+        background-color: #fff;
+        color: var(--primary);
+      }
+
+
 }
 
 #menubtn {
@@ -466,6 +476,10 @@ footer p {
     display: block;
     transition: transform 3s ease-in-out;
     transform: translateX(0);
+  }
+
+  .mobile__menu .link {
+    color: #fff;
   }
 
   .nav {

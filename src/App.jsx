@@ -1,27 +1,26 @@
-import Header from "./components/LandingPage/Header"
-import HomeFooter from "./components/LandingPage/HomeFooter"
-import HomePageSection3 from "./components/LandingPage/HomePageSection3"
-import HomePageSection4 from "./components/LandingPage/HomePageSection4"
-import Homepage from "./components/LandingPage/Homepage"
-import HomePageSection2 from "./components/LandingPage/HomepageSection2"
-import TradingPlan from "./components/LandingPage/TradingPlan"
-import TradingViewChart from "./components/TradingViewChart"
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/LandingPage/Home";
+import AboutPage from "./components/About/AboutPage";
+import PricingPage from "./components/PricingPage/PricingPage";
+import ServicePage from "./components/ServicesPage/ServicePage";
+import ContactPage from "./components/ContactPage/ContactPage";
 
-function App() {
 
+const App = () => {
   return (
     <>
-      <Header />
-      <Homepage />
-      <HomePageSection2 />
-      <TradingViewChart />
-      <HomePageSection3 />
-      <TradingPlan />
-      <HomePageSection4 />
-      <HomeFooter />
+        <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path='/components/About/AboutPage' element={<AboutPage />}/>
+        <Route path="/pricing" element={<PricingPage />}/>
+        <Route path="/services" element={<ServicePage />}/>
+        <Route path="/contact" element={<ContactPage />}/>
+      </Routes>
       
+        
     </>
   )
 }
 
-export default App
+export default App;
+

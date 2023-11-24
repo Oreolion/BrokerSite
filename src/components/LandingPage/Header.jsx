@@ -2,10 +2,12 @@ import { useState } from "react";
 import TradingViewWidget from "./TradingViewWidget";
 import { TiThMenu } from "react-icons/ti";
 import { MdClose } from "react-icons/md";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
 
   const handleMenuBtn = () => {
     setToggle(!toggle);
@@ -15,6 +17,11 @@ const Header = () => {
   window.onscroll = () => {
     setMenu(false);
     setToggle(false);
+  };
+
+  const navigateTo = (url) => {
+    console.log("clicked");
+    navigate(url);
   };
 
   return (
@@ -39,11 +46,48 @@ const Header = () => {
       </header>
       <nav>
         <ul className="navlists">
-          <li>Home</li>
-          <li>ABout Us</li>
-          <li>Services</li>
-          <li>Pricing</li>
-          <li>Contact</li>
+          <li>
+            {" "}
+            <Link to={`/`} className="link">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/components/About/AboutPage`}
+              className="link"
+              onClick={() => navigateTo(`/about`)}
+            >
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/services`}
+              className="link"
+              onClick={() => navigateTo(`/services`)}
+            >
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/pricing`}
+              className="link"
+              onClick={() => navigateTo(`/pricing`)}
+            >
+              Pricing
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/contact`}
+              className="link"
+              onClick={() => navigateTo(`/contact`)}
+            >
+              Contact Us
+            </Link>
+          </li>
         </ul>
       </nav>
       {/* mobile menu */}
@@ -52,11 +96,48 @@ const Header = () => {
           className={toggle && menu ? " mobile__menu active" : "mobile__menu"}
         >
           <ul className="nav">
-            <li>Home</li>
-            <li>ABout Us</li>
-            <li>Services</li>
-            <li>Pricing</li>
-            <li>Contact</li>
+            <li>
+              {" "}
+              <Link to={`/`} className="link">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={`/components/About/AboutPage`}
+                className="link"
+                onClick={() => navigateTo(`/about`)}
+              >
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={`/services`}
+                className="link"
+                onClick={() => navigateTo(`/services`)}
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={`/pricing`}
+                className="link"
+                onClick={() => navigateTo(`/pricing`)}
+              >
+                Pricing
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={`/contact`}
+                className="link"
+                onClick={() => navigateTo(`/contact`)}
+              >
+                Contact Us
+              </Link>
+            </li>
           </ul>
           <div className="mobilemenu-btn">
             <button className="login-btn">Login</button>

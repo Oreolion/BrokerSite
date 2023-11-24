@@ -1,0 +1,280 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  scroll-behavior: smooth;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+:root {
+  --text: #000000;
+  --background: #9d977b;
+  --background-secondary: #2a3646;
+  --background-primary: #131920;
+  --primary: #f9a23f;
+  --secondary: #f7a08d;
+  --accent: #ff8fc8;
+}
+
+html {
+  font-size: 70%;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+}
+
+ul {
+  list-style: none;
+}
+
+nav {
+  z-index: 11;
+}
+
+section {
+  padding: 2rem 5%;
+}
+
+button,
+.btn {
+  cursor: pointer;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.4rem 2rem;
+  width: 9rem;
+  height: 4rem;
+  font-weight: bold;
+  border-radius: 8px;
+  &:hover {
+    background-color: #131920;
+    border: 2px solid var(--primary);
+  }
+}
+
+/* about section 1 */
+
+.aboutsection1 {
+  padding-left: 4.5rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: var(--primary);
+  color: var(--background-secondary);
+}
+
+.aboutsection1 .box1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 40%;
+}
+
+.aboutsection1 .box2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 4.5rem;
+  flex: 1 1 60%;
+}
+
+.aboutsection1 .box1 h1 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.aboutsection1 .box1 p {
+  max-width: 40rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.aboutsection1 .box2 .img__box {
+  width: 100%;
+  height: 50rem;
+  margin-top: -3.1rem;
+  display: block;
+}
+
+.aboutsection1 .box2 .img__box img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  object-fit: contain;
+}
+
+/* about section 2 */
+
+.aboutsection2 {
+  margin-top: -3.2rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--background-secondary);
+  gap: 11rem;
+  padding: 2rem 5%;
+}
+
+.aboutsection2 .topbox {
+    margin-top: 6rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5rem;
+  justify-content: center;
+  flex: 1 1 22rem;
+}
+.aboutsection2 .topbox div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutsection2 .topbox p {
+  max-width: 26rem;
+  color: #ccc;
+  font-size: 1.6rem;
+}
+
+.aboutsection2 .topbox p span {
+  font-weight: bold;
+  color: #000;
+}
+
+.aboutsection2 .topbox img {
+  display: block;
+  width: 20rem;
+  height: 20rem;
+  margin-bottom: 2rem;
+}
+
+.aboutsection2 .bottombox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.aboutsection2 .bottombox .box1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 35%;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  color: #ccc;
+}
+
+.aboutsection2 .bottombox .box1 h1 {
+  font-size: 2.9rem;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+.aboutsection2 .bottombox .box1 p {
+  font-size: 1.4rem;
+  max-width: 29rem;
+  margin-bottom: 4rem;
+}
+
+.aboutsection2 .bottombox .box1 button {
+  width: 15rem;
+  height: 6rem;
+  margin-bottom: 4rem;
+}
+
+.aboutsection2 .bottombox .box2 {
+  flex: 1 1 65%;
+  height: 50rem;
+}
+
+.aboutsection2 .bottombox .box2 img {
+  width: 100%;
+  height: 80%;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 760px) {
+  section {
+    padding: 2rem;
+  }
+
+  .aboutsection1 {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .aboutsection1 .box1 {
+    order: 2;
+  }
+
+  .aboutsection1 .box1 h1 {
+    font-size: 3rem;
+  }
+
+  .aboutsection1 .box1 p {
+    font-size: 1.9rem;
+    max-width: 50rem;
+  }
+
+  .aboutsection1 .box2 {
+    padding: 0;
+  }
+
+  .aboutsection1 .box2 .img__box {
+    margin: 0;
+    margin-top: -2.2rem;
+    margin-left: -4.5rem;
+    width: 100vw;
+    height: 100%;
+  }
+
+  .aboutsection1 .box2 .img__box img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+  }
+
+  .aboutsection2 {
+    margin-top: 0rem;
+  }
+
+  .aboutsection2 .topbox {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .aboutsection2 .bottombox {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .aboutsection2 .bottombox .box1 {
+    align-items: center;
+    text-align: center;
+  }
+
+
+  .aboutsection2 .bottombox .box2 img {
+    width: 100%;
+    height: 100%;
+  }
+}
