@@ -17,7 +17,7 @@ const AboutSection3 = () => {
         <div className="box3">
           <h1>Trust</h1>
           <p>
-            With almost 20 years experience, XTB is one of the largest stock
+            With almost 20 years experience, FFB intergrated and affiliated with one of the largest stock
             exchange-listed FX & CFD brokers in the world. We have offices in
             over 13 countries including UK, Poland, Germany, France and Chile.
           </p>

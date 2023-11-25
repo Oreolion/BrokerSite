@@ -124,7 +124,7 @@ button,
 }
 
 .aboutsection2 .topbox {
-    margin-top: 6rem;
+  margin-top: 6rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -153,7 +153,7 @@ button,
 .aboutsection2 .topbox img {
   display: block;
   width: 20rem;
-  height: 20rem;
+  height: 15rem;
   margin-bottom: 2rem;
 }
 
@@ -202,13 +202,110 @@ button,
   height: 80%;
 }
 
+/* About section 3 */
 
+.aboutsection3 {
+  background: var(--background-primary);
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  flex: 1 1 38rem;
+  padding: 6rem 5%;
+}
 
+.aboutsection3 h1 {
+  font-size: 2.6rem;
+  background: var(--background-primary);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  border-radius: 1rem;
+}
 
+.aboutsection3 p {
+  font-size: 1.4rem;
+  max-width: 36rem;
+}
 
+.aboutsection3 div {
+  margin-top: 3rem;
+  background: var(--background-secondary);
+  height: 24rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
 
+/* about section 4 */
 
+.aboutsection4 {
+  background-color: var(--background-secondary);
+  display: flex;
+  padding-right: 0.5rem;
+  gap: 5rem;
+  color: #ccc;
+  padding-left: 5%;
+}
 
+.aboutsection4 .box1 li {
+  margin-bottom: 1rem;
+}
+
+.aboutsection4 .box1 li  span {
+    color: var(--primary);
+}
+
+.aboutsection4 .box1 ul {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.aboutsection4 h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.aboutsection4 .box1 {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.aboutsection4 .box1 button {
+  width: 15rem;
+  margin-bottom: 3rem;
+}
+
+.aboutsection4 .box2 {
+  flex: 1 1 65%;
+  margin-top: -2rem;
+}
+
+.aboutsection4 .box2 img {
+  height: 104%;
+  width: 100%;
+  opacity: 0.8;
+}
+
+/* about section 5 */
+
+.aboutsection5 h1 {
+  text-align: center;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+  font-size: 2.7rem;
+  color: var(--background-secondary);
+}
+
+.aboutsection5 .innerbox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+}
 
 @media (max-width: 760px) {
   section {
@@ -225,11 +322,11 @@ button,
   }
 
   .aboutsection1 .box1 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .aboutsection1 .box1 p {
-    font-size: 1.9rem;
+    font-size: 1.4rem;
     max-width: 50rem;
   }
 
@@ -272,9 +369,29 @@ button,
     text-align: center;
   }
 
-
   .aboutsection2 .bottombox .box2 img {
     width: 100%;
     height: 100%;
   }
+
+  .aboutsection4 {
+    flex-direction: column;
+  }
+
+  .aboutsection4 h1 {
+    margin-top: 5rem;
+  }
+
+  .aboutsection4 .box1 button {
+    margin-bottom: 3rem;
+  }
+
+  .aboutsection5 .innerbox {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+  }
+
+  
 }

@@ -73,11 +73,13 @@ header {
 
 .logo h1 {
   font-size: 3.9rem;
+  margin-bottom: -1rem;
 }
 
 .logo p {
   white-space: nowrap;
-  font: 0.4rem;
+  font: 0.2rem;
+  color: #f7a08d;
 }
 
 .widgetbox {
@@ -120,7 +122,6 @@ header {
   font-weight: bold;
   padding: 0.6rem 6rem;
 
-
   &:hover {
     background-color: #fff;
     color: var(--primary);
@@ -128,13 +129,11 @@ header {
 }
 
 .navlists li .link {
-    color: #fff;
-    &:hover {
-        background-color: #fff;
-        color: var(--primary);
-      }
-
-
+  color: #fff;
+  &:hover {
+    background-color: #fff;
+    color: var(--primary);
+  }
 }
 
 #menubtn {
@@ -422,13 +421,14 @@ header {
 footer {
   background-color: var(--background-primary);
   color: #ccc;
-  padding: 2rem 7%;
+  padding: 5rem 7%;
 }
 
 footer .inner__footer {
   display: flex;
   flex-direction: row;
-  gap: 10rem;
+  gap: 7rem;
+  margin-bottom: 4rem;
 }
 
 footer .inner__footer .box {
@@ -437,9 +437,17 @@ footer .inner__footer .box {
   margin-bottom: 2rem;
 }
 
+footer li {
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
 footer p {
   text-align: center;
   font-size: 1.2rem;
+  color: var(--secondary);
 }
 
 @media (max-width: 760px) {
@@ -570,5 +578,11 @@ footer p {
   .homepagesection2 .box2 p {
     text-align: center;
     font-size: 1.1rem;
+  }
+
+  footer .inner__footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
   }
 }
