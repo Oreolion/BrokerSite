@@ -493,6 +493,9 @@ footer p {
 
   .mobile__menu .link {
     color: #fff;
+    &:hover {
+        color: var(--primary);
+    }
   }
 
   .nav {

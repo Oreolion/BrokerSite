@@ -91,9 +91,9 @@ const ServiceSection2 = () => {
           <div className="innerbox">
             <div className="box1">
               <div className="infobox">
-                <p>FFP CRPTO INDEX</p>
-                <h4>Auto-invest in the whole crypto market</h4>
-                <button>Get Started</button>
+                <p>TELL-A-FRIEND PROGRAMME</p>
+                <h4>Invite your friends, earn rewards</h4>
+                <button>Learn more</button>
               </div>
               <div className="imgbox">
                 <img src={picture7} alt="picture1" />
@@ -101,9 +101,9 @@ const ServiceSection2 = () => {
             </div>
             <div className="box2">
               <div className="infobox">
-                <p>FFP CRPTO INDEX</p>
-                <h4>Auto-invest in the whole crypto market</h4>
-                <button>Get Started</button>
+                <p>AFFILIATE PROGRAMME</p>
+                <h4>Become a partner and earn commission</h4>
+                <button>Learn more</button>
               </div>
               <div className="imgbox">
                 <img src={picture8} alt="picture1" />
