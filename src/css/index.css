@@ -129,6 +129,7 @@ header {
 }
 
 .navlists li .link {
+    font-size: 1.2rem;
   color: #fff;
   &:hover {
     background-color: #fff;
