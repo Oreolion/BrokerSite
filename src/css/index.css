@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  background-color: var(--background);
+  background-color: var(--background-secondary);
 }
 
 ul {
@@ -442,12 +442,16 @@ footer li {
   text-transform: uppercase;
   margin-bottom: 1rem;
   white-space: nowrap;
+  &:hover {
+    color: var(--primary);
+  }
 }
 
 footer p {
   text-align: center;
   font-size: 1.2rem;
   color: var(--secondary);
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 760px) {

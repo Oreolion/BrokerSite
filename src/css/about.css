@@ -293,6 +293,10 @@ button,
 
 /* about section 5 */
 
+.aboutsection5 {
+    background-color: var(--background);
+}
+
 .aboutsection5 h1 {
   text-align: center;
   margin-bottom: 5rem;

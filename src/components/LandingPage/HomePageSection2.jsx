@@ -1,4 +1,3 @@
-import picture from "/src/assets/images/shubham-dhage-T9rKvI3N0NM-unsplash.jpg";
 
 const HomePageSection2 = () => {
   return (

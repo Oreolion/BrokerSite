@@ -1,8 +1,13 @@
+import Header from "../LandingPage/Header";
+import HomeFooter from "../LandingPage/HomeFooter";
 
 const PricingPage = () => {
   return (
-    <div>PricingPage</div>
-  )
-}
+    <>
+      <Header />
+      <HomeFooter />
+    </>
+  );
+};
 
-export default PricingPage
+export default PricingPage;

@@ -5,6 +5,8 @@ import AboutSection3 from "./AboutSection3"
 import AboutSection4 from "./AboutSection4"
 import AboutSection5 from "./AboutSection5"
 import HomeFooter from "../LandingPage/HomeFooter"
+import "/src/css/about.css";
+
 
 const AboutPage = () => {
   return (
