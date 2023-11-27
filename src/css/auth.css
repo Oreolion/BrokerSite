@@ -1,0 +1,278 @@
+:root {
+  --text: #000000;
+  --background: #9d977b;
+  --background-secondary: #2a3646;
+  --background-primary: #131920;
+  --primary: #f9a23f;
+  --secondary: #f7a08d;
+  --accent: #ff8fc8;
+}
+
+body {
+  overflow: hidden;
+}
+
+.link {
+  color: #ccc;
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+/* Login Section */
+
+.login__section {
+  height: 100vh;
+  padding: 0;
+  /* position: relative; */
+}
+
+.left__container .logo {
+  position: absolute;
+  left: 3%;
+  top: 3%;
+}
+
+.signup__logo {
+  color: #888;
+  width: 30%;
+}
+
+.signup__logo h1 {
+  font-size: 3.9rem;
+  margin-bottom: -1rem;
+}
+
+.signup__logo p {
+  white-space: nowrap;
+  font: 0.2rem;
+  color: #f7a08d;
+}
+
+.login__section .left__container .logo h1 {
+  font-size: 4.5rem;
+}
+
+.login__section .left__container .logo p {
+  font-size: 1.1rem;
+}
+
+.login__section .innerbox {
+  display: flex;
+  color: #ccc;
+}
+
+.login__section .left__container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 50%;
+  background-color: var(--background-secondary);
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  margin-top: 4rem;
+}
+
+.login__section .left__container h1 {
+  font-size: 3.6rem;
+}
+
+.login__section .left__container h1 + p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.login__section .left__container p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.login__section .left__container form {
+  width: 80%;
+  height: 60%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+.login__section .left__container form input {
+  width: 80%;
+  height: 10rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.login__section .left__container form input + p {
+  align-self: flex-start;
+  margin-left: 5rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.login__section .left__container form button {
+  margin-bottom: 2rem;
+  width: 83%;
+  height: 10rem;
+}
+
+.login__section .left__container label {
+  display: block;
+  align-self: flex-start;
+  margin-left: 5rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.login__section .right__container {
+  background: url("/src/assets/images/pexels-kampus-production-8353802.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  color: var(--primary);
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.login__section .right__container h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  max-width: 33rem;
+  margin-left: 2rem;
+}
+
+.login__section .right__container p {
+  font-size: 1.8rem;
+  max-width: 39rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+}
+
+/* sign up section */
+
+.signup__page {
+  background: url(/src/assets/images/istockphoto-1425905549-170667a.webp);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+}
+
+.signup__page .container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65rem;
+  color: #ccc;
+ font-weight: bold;
+}
+
+.signup__page .container h1 {
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+}
+
+.signup__page .container p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.signup__page .container form input {
+  display: block;
+  margin-bottom: 2rem;
+  width: 100%;
+  height: 6rem;
+  padding: 0 1rem;
+  border-radius: 1rem;
+}
+
+.signup__page .container form input::placeholder {
+  font-size: 1.6rem;
+}
+
+.signup__page .container form .name {
+  display: flex;
+  gap: 2rem;
+  width: 105%;
+}
+
+.signup__page .container form .name input {
+  flex: 1 1 50%;
+}
+
+.signup__page .container form .name input {
+  flex: 1 1 50%;
+}
+
+.signup__page .container form .agreement__box p {
+  max-width: 40rem;
+  display: flex;
+  gap: 4rem;
+  font-size: 1.2rem;
+}
+
+.signup__page .container form .agreement__box p + p {
+  gap: 14rem;
+}
+
+.signup__page .container form .agreement__box input {
+  width: 2rem;
+  height: 2rem;
+}
+
+.signup__page .container form button {
+  width: 100%;
+  height: 5rem;
+  margin-bottom: 3rem;
+}
+
+.signup__page .container form button + p {
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .login__section .right__container {
+    display: none;
+  }
+
+  .login__section .left__container {
+    margin-top: 3rem;
+  }
+
+  .login__section .left__container label {
+    margin-left: 4rem;
+  }
+
+  .login__section .left__container form input + p {
+    align-self: flex-start;
+    margin-left: 4rem;
+  }
+
+  .login__section .left__container form input {
+    width: 80%;
+    height: 10rem;
+    margin-bottom: 2rem;
+  }
+
+  .login__section .left__container form button {
+    width: 13rem;
+  }
+
+  .signup__page .container {
+    margin-left: -9rem;
+  }
+
+  .signup__page .signup__logo {
+    margin-bottom: 4rem;
+  }
+}

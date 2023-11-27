@@ -28,15 +28,34 @@ const Header = () => {
     <>
       <header>
         <div className="logo">
-          <h1>FFB</h1>
-          <p>Fidelity First Brokers</p>
+          <Link className="link" to={"/"}>
+            <h1>FFB</h1>
+            <p>Fidelity First Brokers</p>
+          </Link>
         </div>
         <div className="widgetbox">
           <TradingViewWidget />
         </div>
         <div className="header__btn">
-          <button className="login-btn">Login</button>
-          <button className="signup-btn">Sign Up</button>
+          <button className="login-btn">
+            {" "}
+            <Link
+              to={`/login`}
+              className="link"
+              onClick={() => navigateTo(`/login`)}
+            >
+              Login
+            </Link>{" "}
+          </button>
+          <button className="signup-btn">
+            <Link
+              to={`/signup`}
+              className="link"
+              onClick={() => navigateTo(`/signup`)}
+            >
+              Sign Up
+            </Link>
+          </button>
         </div>
         {!menu && !toggle ? (
           <TiThMenu id="menubtn" size={50} onClick={handleMenuBtn} />
@@ -140,8 +159,25 @@ const Header = () => {
             </li>
           </ul>
           <div className="mobilemenu-btn">
-            <button className="login-btn">Login</button>
-            <button className="signup-btn">Sign Up</button>
+            <button className="login-btn">
+              {" "}
+              <Link
+                className="link"
+                to={`/login`}
+                onClick={() => navigateTo(`/login`)}
+              >
+                Login
+              </Link>{" "}
+            </button>
+            <button className="signup-btn">
+              <Link
+                className="link"
+                to={`/signup`}
+                onClick={() => navigateTo(`/signup`)}
+              >
+                Sign Up
+              </Link>
+            </button>
           </div>
         </nav>
       )}

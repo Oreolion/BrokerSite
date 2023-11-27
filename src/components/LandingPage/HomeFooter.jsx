@@ -1,26 +1,93 @@
+import { Link, useNavigate } from "react-router-dom";
+
 const HomeFooter = () => {
+
+    const navigate = useNavigate();
+
+    const navigateTo = (url) => {
+        console.log("clicked");
+        navigate(url);
+      };
+
   return (
     <>
       <footer>
         <div className="inner__footer">
           <div className="box">
             <div className="logo">
-              <h1>FFB</h1>
-              <p>Fidelity First Brokers</p>
+            <Link className="link" to={"/"}>
+                <h1>FFB</h1>
+                <p>Fidelity First Brokers</p>
+              </Link>
             </div>
           </div>
           <ul className="box">
-            <li>HOME</li>
-            <li>ABOUT US</li>
-            <li>SERVICES</li>
-            <li>PRICING</li>
-            <li>CONTACT</li>
+          <li>
+            {" "}
+            <Link to={`/`} className="link">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/components/About/AboutPage`}
+              className="link"
+              onClick={() => navigateTo(`/about`)}
+            >
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/services`}
+              className="link"
+              onClick={() => navigateTo(`/services`)}
+            >
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/pricing`}
+              className="link"
+              onClick={() => navigateTo(`/pricing`)}
+            >
+              Pricing
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/contact`}
+              className="link"
+              onClick={() => navigateTo(`/contact`)}
+            >
+              Contact Us
+            </Link>
+          </li>
           </ul>
           <ul className="box">
             <li>FAQ</li>
-            <li>LOGIN</li>
-            <li>SIGN UP</li>
-            <li>LEARN MORE</li>
+            <li><Link
+              to={`/login`}
+              className="link"
+              onClick={() => navigateTo(`/login`)}
+            >
+              Login
+            </Link></li>
+            <li><Link
+              to={`/signup`}
+              className="link"
+              onClick={() => navigateTo(`/signup`)}
+            >
+              Sign Up
+            </Link></li>
+            <li><Link
+              to={`/services`}
+              className="link"
+              onClick={() => navigateTo(`/services`)}
+            >
+              LEARN MORE
+            </Link></li>
           </ul>
           <ul className="box">
             <li>LEGAL</li>

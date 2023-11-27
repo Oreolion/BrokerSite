@@ -1,4 +1,14 @@
+import { Link, useNavigate } from "react-router-dom";
+
 const ContactSection1 = () => {
+
+
+    const navigate = useNavigate();
+    const navigateTo = (url) => {
+        console.log("clicked");
+        navigate(url);
+      };
+
   return (
     <>
       <section className="contactsection1">
@@ -9,7 +19,13 @@ const ContactSection1 = () => {
             Find the best ways to get in contact with our award-winning 24/7^^
             customer support team
           </p>
-          <button>START TRADING</button>
+          <button><Link
+              to={`/signup`}
+              className="link"
+              onClick={() => navigateTo(`/signup`)}
+            >
+              START TRADING
+            </Link></button>
         </div>
       </section>
     </>

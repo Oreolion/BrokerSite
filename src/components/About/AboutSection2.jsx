@@ -2,8 +2,15 @@ import picture1 from "/src/assets/images/assets_3@2x.955776ab.png";
 import picture2 from "/src/assets/images/assets_2@2x.5a4a98a0.png";
 import picture3 from "/src/assets/images/assets_1@2x.8f2f47cf.png";
 import map from "/src/assets/images/istockphoto-1435226213-170667a.webp";
+import { Link, useNavigate } from "react-router-dom";
 
 const AboutSection2 = () => {
+    const navigate = useNavigate();
+    const navigateTo = (url) => {
+        console.log("clicked");
+        navigate(url);
+      };
+
   return (
     <>
       <section className="aboutsection2">
@@ -40,7 +47,13 @@ const AboutSection2 = () => {
               exchange-listed FX & CFD brokers in the world. We have offices in
               over 7 countries including UK, Poland, Germany, France and Chile.
             </p>
-            <button>Open an Account</button>
+            <button><Link
+              to={`/signup`}
+              className="link"
+              onClick={() => navigateTo(`/signup`)}
+            >
+              GET STARTED
+            </Link></button>
           </div>
 
           <div className="box2">

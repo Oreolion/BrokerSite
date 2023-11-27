@@ -71,6 +71,11 @@ header {
   color: #888;
 }
 
+.logo .link {
+
+    color: #888;
+}
+
 .logo h1 {
   font-size: 3.9rem;
   margin-bottom: -1rem;
@@ -102,6 +107,15 @@ header {
   width: 9rem;
   height: 4rem;
   font-weight: bold;
+}
+
+.header__btn .link {
+    color: #fff;
+    &:hover {
+      color: var(--primary);
+    }
+
+
 }
 
 /* NavBar */

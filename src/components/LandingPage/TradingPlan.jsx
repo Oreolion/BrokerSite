@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+
 const TradingPlan = () => {
+    const navigate = useNavigate();
+
+    const navigateTo = (url) => {
+        console.log("clicked");
+        navigate(url);
+      };
   return (
     <>
       <section className="tradingplansection">
@@ -13,7 +22,13 @@ const TradingPlan = () => {
 
             <h2>$500+</h2>
 
-            <button>APPLY NOW</button>
+            <button><Link
+              to={`/signup`}
+              className="link"
+              onClick={() => navigateTo(`/signup`)}
+            >
+              APPLY NOW
+            </Link></button>
           </div>
           <div className="box">
             <h3>BITCOIN MINI PLAN 2</h3>
@@ -24,7 +39,13 @@ const TradingPlan = () => {
 
             <h2>$10,000+</h2>
 
-            <button>APPLY NOW</button>
+            <button><Link
+              to={`/signup`}
+              className="link"
+              onClick={() => navigateTo(`/signup`)}
+            >
+              APPLY NOW
+            </Link></button>
           </div>
           <div className="box">
             <h3>BITCOIN FX SILVER PLAN</h3>
@@ -46,7 +67,13 @@ const TradingPlan = () => {
 
             <h2>$30,000+</h2>
 
-            <button>APPLY NOW</button>
+            <button><Link
+              to={`/signup`}
+              className="link"
+              onClick={() => navigateTo(`/signup`)}
+            >
+              APPLY NOW
+            </Link></button>
           </div>
           <div className="box">
             <h3>PLATINUM ELITE PLAN</h3>
@@ -57,7 +84,13 @@ const TradingPlan = () => {
 
             <h2>$40,000+</h2>
 
-            <button>APPLY NOW</button>
+            <button><Link
+              to={`/signup`}
+              className="link"
+              onClick={() => navigateTo(`/signup`)}
+            >
+              APPLY NOW
+            </Link></button>
           </div>
           <div className="box">
             <h3>PLATINUM CORPORATE PLAN</h3>
@@ -68,7 +101,13 @@ const TradingPlan = () => {
 
             <h2>$50,000+</h2>
 
-            <button>APPLY NOW</button>
+            <button><Link
+              to={`/signup`}
+              className="link"
+              onClick={() => navigateTo(`/signup`)}
+            >
+              APPLY NOW
+            </Link></button>
           </div>
         </div>
       </section>

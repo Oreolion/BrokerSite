@@ -1,16 +1,38 @@
 import { GiCash } from "react-icons/gi";
 import { BsCashCoin } from "react-icons/bs";
 import { RiSecurePaymentFill } from "react-icons/ri";
+import { Link, useNavigate } from "react-router-dom";
 
 const Homepage = () => {
+
+
+    const navigate = useNavigate();
+
+    const navigateTo = (url) => {
+        console.log("clicked");
+        navigate(url);
+      };
+
   return (
     <>
       <section className="homepage__container">
         <div className="homepage__innerbox">
           <h1>YOUR NEW <span>FINANCIAL PICTURE</span> STARTS HERE. <span> FINANCIAL ADVISORY</span>  THAT WORKS</h1>
           <div className="homepage__btn">
-            <button>LEARN MORE</button>
-            <button>OPEN AN ACCOUNT</button>
+            <button><Link
+              to={`/services`}
+              className="link"
+              onClick={() => navigateTo(`/services`)}
+            >
+              LEARN MORE
+            </Link></button>
+            <button><Link
+              to={`/signup`}
+              className="link"
+              onClick={() => navigateTo(`/signup`)}
+            >
+              OPEN AN ACCOUNT
+            </Link></button>
           </div>
         </div>
         <div className="bottombox">
