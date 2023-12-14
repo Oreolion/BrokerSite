@@ -7,8 +7,10 @@ import ContactPage from "./components/ContactPage/ContactPage";
 import Login from "./components/AuthPage/Login";
 import SignUp from "./components/AuthPage/SignUp";
 import { AuthContextProvider } from "./components/AuthPage/AuthContext";
-import DashBoardPage from "./components/DashBoard/DashBoardPage";
+// import DashBoard from "./components/DashBoard/DashBoard";
 import { ProtectedRoute } from "./components/AuthPage/ProtectedRoute";
+import DashBoardPage from "./components/DashBoard/DashBoardPage";
+import Deposit from "./components/DashBoard/Deposit";
 
 const App = () => {
   return (
@@ -23,10 +25,18 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route
-            path="/dashboardpage"
+            path="/login/dashboardpage"
             element={
               <ProtectedRoute>
                 <DashBoardPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/login/deposit"
+            element={
+              <ProtectedRoute>
+                <Deposit />
               </ProtectedRoute>
             }
           />

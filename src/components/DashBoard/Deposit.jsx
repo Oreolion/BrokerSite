@@ -1,24 +1,18 @@
-import { useNavigate } from "react-router";
 import { UserAuth } from "../AuthPage/AuthContext";
-import "/src/css/dashboard.css";
-import { FaUserTie } from "react-icons/fa";
-import { IoMenu } from "react-icons/io5";
-import { IoIosNotifications } from "react-icons/io";
-import { FaCaretDown } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import TradingPlan from "../LandingPage/TradingPlan";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { MdClose } from "react-icons/md";
-import { IoMdHome } from "react-icons/io";
+import { IoIosNotifications, IoMdHome } from "react-icons/io";
 import { LuHistory } from "react-icons/lu";
 import { MdOutlineSettings } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import { AiOutlineMinus } from "react-icons/ai";
-import { IoAddSharp } from "react-icons/io5";
-import TradingViewChart from "../LandingPage/TradingViewChart";
+import { IoAddSharp, IoMenu } from "react-icons/io5";
+import { FaCaretDown, FaUserTie } from "react-icons/fa";
 import TradingViewWidget from "../LandingPage/TradingViewWidget";
-import DashBoardData from "./DashBoardData";
 
-const DashBoardPage = () => {
+const Deposit = () => {
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
 
@@ -38,7 +32,7 @@ const DashBoardPage = () => {
   const handleLogOut = async () => {
     try {
       await logout();
-      navigate("/login");
+      navigate("/");
       alert("You are logged out");
     } catch (e) {
       console.log(e.message);
@@ -68,7 +62,7 @@ const DashBoardPage = () => {
             <ul className="dashboard__navlists">
               <li>
                 <Link
-                 className="link"
+                  className="link"
                   to={`/login/dashboardpage`}
                   onClick={() => navigateTo(`/login/dashboardpage`)}
                 >
@@ -76,7 +70,11 @@ const DashBoardPage = () => {
                 </Link>
               </li>
               <li>
-                <Link className="link" to={`/login/deposit`} onClick={() => navigateTo(`/login/deposit`)}>
+                <Link
+                  className="link"
+                  to={`/login/deposit`}
+                  onClick={() => navigateTo(`/login/deposit`)}
+                >
                   <IoAddSharp size={20} /> <p>Deposit</p>{" "}
                 </Link>
               </li>
@@ -102,10 +100,9 @@ const DashBoardPage = () => {
                 </Link>
               </li>
               <li onClick={handleLogOut}>
-                {" "}
                 <div className="link">
-
-                <BiLogOut size={20} /> <p>Logout</p>{" "}
+                  {" "}
+                  <BiLogOut size={20} /> <p>Logout</p>{" "}
                 </div>
               </li>
             </ul>
@@ -120,7 +117,6 @@ const DashBoardPage = () => {
         )}
         <IoIosNotifications size={30} className="notification-icon" />
       </div>
-
       <div className="dashboard">
         <div className="header">
           <div className="user">
@@ -145,43 +141,53 @@ const DashBoardPage = () => {
         <main className="dashboard__widget1">
           <TradingViewWidget className="widgetbox" />
         </main>
-        <main className="dashboard__info">
-          <div className="user__info">
-            <h1>HI Name... Welcome!</h1>
-            <div>
-              <p>Username: {user.username}</p>
-              <p>Email: {user.email}</p>
-            </div>
-          </div>
-          <div className="inner-box">
-            <div className="box box1">
-              <p>Account Balance:</p>
-              <h2>
-                $0.<span>00</span>{" "}
-              </h2>
-              <p> your account balance</p>
-            </div>
-            <div className="box box2">
-              <p>Earnings:</p>
-              <h2>
-                $0.<span>00</span>{" "}
-              </h2>
-              <p> your Earnings</p>
-            </div>
-            <div className="box box3">
-              <p>Registered Date:</p>
-              <h2>
-                $0.<span>00</span>{" "}
-              </h2>
-              <p> Account Registered Date</p>
-            </div>
+      </div>
+
+      <div className="deposit__page">
+        <main className="user__info">
+          <h1>My Deposit</h1>
+          <div>
+            <p>Username: {user.username}</p>
+            <p>Email: {user.email}</p>
           </div>
         </main>
-        <TradingViewChart />
-        <DashBoardData />
+        <TradingPlan />
+        <main className="account__section">
+            <form action="">
+            <h1>Account Balance: $0.00</h1>
+                <label htmlFor="">Amount to Deposit ($):</label>
+                <br />
+                <input type="text" placeholder="Amount to spend ($)" />
+                <br />
+
+                <label htmlFor="">Choose Plan:</label>
+                <br />
+
+                <input type="text" placeholder="Amount to spend ($)" />
+                <br />
+
+                <label htmlFor="">Choose Payment Channel:</label>
+                <br />
+
+                <input type="text" placeholder="Amount to spend ($)" />
+                <br />
+
+                <label htmlFor="">Confirm Payment Channel:</label>
+                <br />
+
+                <input type="text" placeholder="Amount to spend ($)" />
+                <br />
+
+                <button>Continue</button>
+
+            </form>
+
+        </main>
+
       </div>
+      <p className="footer__text">Copyright © Secure cyptocurrency Platform!</p>
     </>
   );
 };
 
-export default DashBoardPage;
+export default Deposit;

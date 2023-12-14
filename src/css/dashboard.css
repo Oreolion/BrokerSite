@@ -1,0 +1,583 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  scroll-behavior: smooth;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+:root {
+  --text: #000000;
+  --background: #9d977b;
+  --background-secondary: #2a3646;
+  --background-primary: #131920;
+  --primary: #f9a23f;
+  --secondary: #f7a08d;
+  --accent: #ff8fc8;
+}
+
+.dashboard {
+  color: #fff;
+}
+
+/* dashboard navigations */
+
+.dashboard__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 3rem;
+  width: 18rem;
+  height: 100vh;
+  background-color: var(--background-primary);
+  color: #ccc;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 11;
+}
+
+.logo {
+  margin: 2rem 0 3rem;
+}
+
+.logo p {
+  font-size: 1rem;
+}
+
+.dashboard__nav .user {
+  margin-bottom: 5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+}
+
+.dashboard__nav .user p {
+  font-size: 1.1rem;
+}
+
+.dashboard__navlists .link {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dashboard__navlists .link li {
+  display: flex;
+  align-items: center;
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+/* dashboard section */
+
+.dashboard .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+  background-color: var(--primary);
+  width: 100vw;
+  padding: 1rem 3rem;
+  position: relative;
+}
+
+.dashboard .header .user {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  right: 10%;
+}
+
+.icons {
+  display: flex;
+  gap: 3rem;
+  position: absolute;
+  top: 4%;
+  left: 23%;
+  z-index: 111;
+  color: #fff;
+  cursor: pointer;
+}
+
+.icons .notification-icon {
+  display: flex;
+}
+.icons .menu-icon {
+  display: none;
+}
+
+.mobile-header {
+  display: none;
+}
+
+/* dashboard content */
+
+.dashboard__widget1 .widgetbox {
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  height: 6rem;
+  position: absolute;
+  top: -1%;
+  left: 28%;
+  width: 65rem;
+}
+
+.dashboard .dashboard__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  height: 27rem;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+}
+
+.dashboard .dashboard__info .user__info div {
+  display: flex;
+  gap: 2rem;
+}
+
+.dashboard .dashboard__info .user__info h1 {
+  white-space: nowrap;
+  color: #ccc;
+}
+
+.dashboard .dashboard__info .user__info p {
+  background: #fff;
+  padding: 0.5rem 1rem;
+  width: 16rem;
+  height: 2.5rem;
+  color: var(--background-primary);
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.dashboard .dashboard__info .user__info {
+  margin: 2rem;
+  margin-left: 7rem;
+  display: flex;
+  align-items: center;
+  gap: 11rem;
+}
+
+.dashboard .dashboard__info .inner-box {
+  display: flex;
+  margin-left: 15rem;
+  margin-right: 2rem;
+  flex-wrap: wrap;
+  gap: 3rem;
+  height: 60rem;
+}
+
+.dashboard .dashboard__info .inner-box .box {
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  height: 13rem;
+  font-size: 1.2rem;
+  width: 25rem;
+  flex: 1 1 20rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.dashboard .dashboard__info .inner-box .box h2 > span {
+  font-size: 1.2rem;
+}
+
+.dashboard .dashboard__info .inner-box .box > p:first-child {
+  font-weight: bold;
+}
+
+.dashboard .dashboard__info .inner-box .box2 {
+  background-color: var(--accent);
+}
+
+.dashboard .dashboard__info .inner-box .box3 {
+  background-color: var(--secondary);
+}
+
+.tradingview-widget-container1 {
+  width: 80%;
+  margin-left: 24rem;
+  height: 45rem;
+  margin-bottom: 3rem;
+}
+
+/* dashboard data */
+
+.dashboard__data {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.dashboard__data .data__container {
+  padding-top: 2rem;
+}
+
+.dashboard__data .data__container div {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  background-color: #fff;
+  color: var(--primary);
+  width: 50rem;
+  height: 7rem;
+  justify-content: space-evenly;
+  border-right: 3px solid #f9a23f;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* deposit page */
+
+.deposit__page {
+  margin-left: 20rem;
+}
+
+.deposit__page .user__info {
+  margin: 2rem;
+  margin-left: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11rem;
+}
+.deposit__page .user__info h1 {
+  font-size: 3rem;
+}
+
+.deposit__page .user__info div {
+  display: flex;
+  gap: 2rem;
+}
+
+.user__info h1 {
+  white-space: nowrap;
+  color: #ccc;
+}
+
+.deposit__page .user__info p {
+  background: #fff;
+  padding: 0.5rem 1rem;
+  width: 16rem;
+  height: 2.5rem;
+  color: var(--background-primary);
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.deposit__page .account__section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ccc;
+}
+
+.deposit__page .account__section form {
+  width: 65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  padding: 3rem;
+  gap: 1rem;
+  background-color: var(--background-primary);
+}
+
+.deposit__page .account__section form label {
+  font-size: 1.6rem;
+  align-self: flex-start;
+  margin-left: 4rem;
+}
+
+.deposit__page .account__section form input {
+  width: 65%;
+  height: 3.5rem;
+  padding: 0 1rem;
+}
+
+.deposit__page .account__section button {
+    width: 68%;
+    margin: 2rem;
+    letter-spacing: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+.footer__text {
+    color: var(--primary);
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+
+@media (max-width: 768px) {
+  .isactive {
+    display: flex;
+    right: 0;
+    height: 100vh;
+    padding-top: 6rem;
+  }
+
+  .dashboard__nav .logo {
+    display: none;
+  }
+
+  .dashboard .header {
+    display: none;
+  }
+
+  .dashboard .mobile-header .user {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-right: 6rem;
+  }
+
+  .dashboard .mobile-header .logo {
+    margin-left: 1rem;
+  }
+
+  .icons {
+    display: flex;
+    gap: 2rem;
+    position: absolute;
+    position: fixed;
+    top: 4%;
+    left: 80%;
+    z-index: 111;
+    color: #fff;
+    margin-right: 2rem;
+    background-color: #f9a23f;
+  }
+
+  .icons .menu-icon,
+  .icons .close-icon {
+    display: flex;
+    order: 2;
+    background-color: #f9a23f;
+  }
+
+  .mobile-header {
+    height: 6rem;
+    width: 100vw;
+    padding: 1rem 3rem;
+    /* position: fixed; */
+    position: relative;
+  }
+
+  .dashboard .mobile-header {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 6rem;
+    background-color: var(--primary);
+  }
+
+  .dashboard .mobile-header .user {
+    position: absolute;
+    right: 23%;
+  }
+
+  .dashboard .mobile-header .user .user-img {
+    font-size: 1rem;
+  }
+
+  .tradingview-widget-container {
+    width: 80%;
+  }
+
+  .dashboard__widget1 .widgetbox {
+    margin-top: 1rem;
+    position: absolute;
+    top: 7rem;
+    left: 0;
+  }
+
+  .dashboard .dashboard__info .user__info {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .dashboard .dashboard__info {
+    margin-left: 0;
+    margin-top: 5rem;
+    height: 43rem;
+  }
+
+  .dashboard .dashboard__info .inner-box {
+    margin-left: 4rem;
+  }
+
+  .tradingview-widget-container1 {
+    height: 42rem;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .dashboard__data .data__container div {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+
+  .dashboard__data .data__container div p {
+    margin-bottom: 4px;
+  }
+
+  .deposit__page {
+    margin-left: 0;
+    margin-top: 7rem;
+  }
+
+  .deposit__page .user__info {
+    margin: 2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .deposit__page .account__section form label {
+    margin-left: 10rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard__nav {
+    width: 12rem;
+    letter-spacing: -0.2px;
+    font-size: 1.1rem;
+    padding: 2rem;
+  }
+
+  .dashboard__nav .user {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dashboard .mobile-header .user {
+    gap: 0.5rem;
+  }
+
+  .icons {
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    left: 75%;
+    top: 7%;
+  }
+
+  .dashboard .mobile-header .logo {
+    margin-left: -2rem;
+  }
+
+  .dashboard .mobile-header .logo h1 {
+    font-size: 2.3rem;
+    letter-spacing: -0.8px;
+  }
+  .dashboard .mobile-header .logo p {
+    font-size: 0.5rem;
+    letter-spacing: -0.4px;
+  }
+
+  .dashboard__navlists li {
+    gap: 0.6rem;
+  }
+
+  .dashboard .dashboard__info {
+    height: 63rem;
+    margin-left: -2rem;
+  }
+
+  .dashboard .dashboard__info .user__info div {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .deposit__page .user__info {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .deposit__page .user__info div {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 460px)  {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+  .icons {
+    top: 5%;
+  }
+
+  .dashboard .dashboard__info {
+    height: 63rem;
+  }
+
+  .dashboard .dashboard__info .inner-box {
+    margin-bottom: 12rem;
+  }
+
+   .deposit__page .account__section form {
+    width: 42rem;
+
+  }
+
+  .deposit__page .account__section form label {
+    margin-left: 7rem;
+  } 
+
+  
+  
+}

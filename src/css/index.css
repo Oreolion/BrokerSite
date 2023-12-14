@@ -57,6 +57,7 @@ button,
 
 header {
   padding: 2rem 5%;
+  height: 6rem;
   display: flex;
   flex-direction: row;
   gap: 3rem;
