@@ -1,7 +1,7 @@
 import { UserAuth } from "../AuthPage/AuthContext";
-import TradingPlan from "../LandingPage/TradingPlan";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "/src/css/accountsettings.css";
 import { MdClose } from "react-icons/md";
 import { IoIosNotifications, IoMdHome } from "react-icons/io";
 import { LuHistory } from "react-icons/lu";
@@ -12,7 +12,7 @@ import { IoAddSharp, IoMenu } from "react-icons/io5";
 import { FaCaretDown, FaUserTie } from "react-icons/fa";
 import TradingViewWidget from "../LandingPage/TradingViewWidget";
 
-const Deposit = () => {
+const AccountSettings = () => {
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
 
@@ -62,7 +62,7 @@ const Deposit = () => {
             <ul className="dashboard__navlists">
               <li>
                 <Link
-                 className="link"
+                  className="link"
                   to={`/login/dashboardpage`}
                   onClick={() => navigateTo(`/login/dashboardpage`)}
                 >
@@ -70,45 +70,55 @@ const Deposit = () => {
                 </Link>
               </li>
               <li>
-                <Link className="link" to={`/login/deposit`} onClick={() => navigateTo(`/login/deposit`)}>
+                <Link
+                  className="link"
+                  to={`/login/deposit`}
+                  onClick={() => navigateTo(`/login/deposit`)}
+                >
                   <IoAddSharp size={20} /> <p>Deposit</p>{" "}
                 </Link>
               </li>
               <li>
-                <Link className="link"
-                to={`/login/withdraw`}
-                onClick={() => navigateTo(`/login/withdraw`)}
+                <Link
+                  className="link"
+                  to={`/login/withdraw`}
+                  onClick={() => navigateTo(`/login/withdraw`)}
                 >
                   <AiOutlineMinus size={20} /> <p>Withdraw</p>{" "}
                 </Link>
               </li>
               <li>
-                <Link className="link"
-                to={`/login/deposittransaction`}
-                onClick={() => navigateTo(`/login/deposittransaction`)}>
+                <Link
+                  className="link"
+                  to={`/login/deposittransaction`}
+                  onClick={() => navigateTo(`/login/deposittransaction`)}
+                >
                   <LuHistory size={20} /> <p> Deposit Transactions</p>
                 </Link>
               </li>
               <li>
-                <Link className="link"
-                to={`/login/withdrawtransaction`}
-                onClick={() => navigateTo(`/login/withdrawtransaction`)}>
+                <Link
+                  className="link"
+                  to={`/login/withdrawtransaction`}
+                  onClick={() => navigateTo(`/login/withdrawtransaction`)}
+                >
                   <LuHistory size={20} />
                   <p>Withdraw Transactions </p>{" "}
                 </Link>
               </li>
               <li>
-                  <Link className="link"
+                <Link
+                  className="link"
                   to={`/login/accountsettings`}
-                  onClick={() => navigateTo(`/login/accountsettings`)}>
-                    <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
-                  </Link>
-                </li>
+                  onClick={() => navigateTo(`/login/accountsettings`)}
+                >
+                  <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
+                </Link>
+              </li>
               <li onClick={handleLogOut}>
                 {" "}
                 <div className="link">
-
-                <BiLogOut size={20} /> <p>Logout</p>{" "}
+                  <BiLogOut size={20} /> <p>Logout</p>{" "}
                 </div>
               </li>
             </ul>
@@ -149,51 +159,61 @@ const Deposit = () => {
         </main>
       </div>
 
-      <div className="deposit__page">
-        <main className="user__info">
-          <h1>My Deposit</h1>
+      <main className="deposit__page">
+        <div className="user__info">
+          <h1>Account Settings</h1>
           <div>
             <p>Username: {user.username}</p>
             <p>Email: {user.email}</p>
           </div>
-        </main>
-        <TradingPlan />
-        <main className="account__section">
+        </div>
+      </main>
+      <div className="settings__section">
+        <div className="right__section">
+          <h2>PROFILE UPDATE</h2>
+          <div className="inner__box">
+            <div className="usericon__box">
+              <FaUserTie size={40} />
+            </div>
             <form action="">
-            <h1>Account Balance: $0.00</h1>
-                <label htmlFor="">Amount to Deposit ($):</label>
-                <br />
-                <input type="text" placeholder="Amount to spend ($)" />
-                <br />
-
-                <label htmlFor="">Choose Plan:</label>
-                <br />
-
-                <input type="text" placeholder="Amount to spend ($)" />
-                <br />
-
-                <label htmlFor="">Choose Payment Channel:</label>
-                <br />
-
-                <input type="text" placeholder="Amount to spend ($)" />
-                <br />
-
-                <label htmlFor="">Confirm Payment Channel:</label>
-                <br />
-
-                <input type="text" placeholder="Amount to spend ($)" />
-                <br />
-
-                <button>Continue</button>
-
+              <label htmlFor="username">Username</label>
+              <input type="text" value="" />
+              <label htmlFor="firstname">Firstname</label>
+              <input type="text" value="" />
+              <label htmlFor="lastname">Lastname</label>
+              <input type="text" value="" />
+              <label htmlFor="country">Country</label>
+              <input type="text" value="" />
+              <label htmlFor="telephone">Telephone</label>
+              <input type="number" value="" />
+              <input type="file" />
+              <button>Update Info</button>
             </form>
-
-        </main>
-
+          </div>
+        </div>
+        <div className="left__section">
+          <div className="innerbox">
+            <div className="box1">
+              <h2>ACCOUNT SETTINGS</h2>
+              <button>Change Password</button>
+            </div>
+            <div className="box2">
+              <h2>CONTACT US</h2>
+              <div className="BOX">
+                <img src="" alt="" />
+                <p>Phone Numbers</p>
+                <p>+440038*****</p>
+                <p>Email Address</p>
+                <p>support@ffbinvestment.net</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
       <p className="footer__text">Copyright © Secure cyptocurrency Platform!</p>
     </>
   );
 };
 
-export default Deposit;
+export default AccountSettings;

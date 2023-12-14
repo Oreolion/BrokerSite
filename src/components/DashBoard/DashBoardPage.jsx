@@ -81,26 +81,35 @@ const DashBoardPage = () => {
                 </Link>
               </li>
               <li>
-                <Link className="link">
+                <Link className="link"
+                to={`/login/withdraw`}
+                onClick={() => navigateTo(`/login/withdraw`)}
+                >
                   <AiOutlineMinus size={20} /> <p>Withdraw</p>{" "}
                 </Link>
               </li>
               <li>
-                <Link className="link">
+                <Link className="link"
+                to={`/login/deposittransaction`}
+                onClick={() => navigateTo(`/login/deposittransaction`)}>
                   <LuHistory size={20} /> <p> Deposit Transactions</p>
                 </Link>
               </li>
               <li>
-                <Link className="link">
+                <Link className="link"
+                to={`/login/withdrawtransaction`}
+                onClick={() => navigateTo(`/login/withdrawtransaction`)}>
                   <LuHistory size={20} />
                   <p>Withdraw Transactions </p>{" "}
                 </Link>
               </li>
               <li>
-                <Link className="link">
-                  <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
-                </Link>
-              </li>
+                  <Link className="link"
+                  to={`/login/accountsettings`}
+                  onClick={() => navigateTo(`/login/accountsettings`)}>
+                    <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
+                  </Link>
+                </li>
               <li onClick={handleLogOut}>
                 {" "}
                 <div className="link">

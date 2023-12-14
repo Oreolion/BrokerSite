@@ -7,10 +7,13 @@ import ContactPage from "./components/ContactPage/ContactPage";
 import Login from "./components/AuthPage/Login";
 import SignUp from "./components/AuthPage/SignUp";
 import { AuthContextProvider } from "./components/AuthPage/AuthContext";
-// import DashBoard from "./components/DashBoard/DashBoard";
 import { ProtectedRoute } from "./components/AuthPage/ProtectedRoute";
 import DashBoardPage from "./components/DashBoard/DashBoardPage";
 import Deposit from "./components/DashBoard/Deposit";
+import AccountSettings from "./components/DashBoard/AccountSettings";
+import DepositTransaction from "./components/DashBoard/DepositTransaction";
+import WithdrawTransaction from "./components/DashBoard/WithdrawTransaction";
+import Withdraw from "./components/DashBoard/Withdraw";
 
 const App = () => {
   return (
@@ -37,6 +40,38 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <Deposit />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/login/withdraw"
+            element={
+              <ProtectedRoute>
+                <Withdraw />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/login/deposittransaction"
+            element={
+              <ProtectedRoute>
+                <DepositTransaction />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/login/withdrawtransaction"
+            element={
+              <ProtectedRoute>
+                <WithdrawTransaction />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/login/accountsettings"
+            element={
+              <ProtectedRoute>
+                <AccountSettings />
               </ProtectedRoute>
             }
           />
