@@ -55,6 +55,7 @@
 
 .settings__section .right__section .box2 {
   width: 30rem;
+  height: 22rem;
   margin-left: 2rem;
 }
 .settings__section .right__section .box1 {
@@ -114,10 +115,16 @@
   margin-bottom: 2rem;
 }
 
+
+
 .settings__section .right__section .box2 .box {
   text-align: center;
   font-size: 1.3rem;
   font-weight: bold;
+}
+.settings__section .right__section .box2 .box img {
+    width: 12rem;
+    margin-bottom: 2rem;
 }
 
 .settings__section .right__section .inner__box {
