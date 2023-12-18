@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router";
 import { UserAuth } from "../AuthPage/AuthContext";
 import "/src/css/dashboard.css";
-import { FaUserTie } from "react-icons/fa";
+import { FaUser, FaUserTie } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 import { IoIosNotifications } from "react-icons/io";
 import { FaCaretDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { MdClose } from "react-icons/md";
+import { MdAttachEmail, MdClose } from "react-icons/md";
 import { IoMdHome } from "react-icons/io";
 import { LuHistory } from "react-icons/lu";
 import { MdOutlineSettings } from "react-icons/md";
@@ -158,9 +158,9 @@ const DashBoardPage = () => {
           <div className="user__info">
             <h1>HI Name... Welcome!</h1>
             <div>
-              <p>Username: {user.username}</p>
-              <p>Email: {user.email}</p>
-            </div>
+            <p> <FaUser size={18} /> <span>Username: {user.username}</span> </p>
+            <p><MdAttachEmail size={18} /> <span>Email: {user.email}</span> </p>
+          </div>
           </div>
           <div className="inner-box">
             <div className="box box1">

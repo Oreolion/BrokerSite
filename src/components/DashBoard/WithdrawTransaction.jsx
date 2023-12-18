@@ -2,14 +2,14 @@
 import { UserAuth } from "../AuthPage/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { MdClose } from "react-icons/md";
+import { MdAttachEmail, MdClose } from "react-icons/md";
 import { IoIosNotifications, IoMdHome } from "react-icons/io";
 import { LuHistory } from "react-icons/lu";
 import { MdOutlineSettings } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import { AiOutlineMinus } from "react-icons/ai";
 import { IoAddSharp, IoMenu } from "react-icons/io5";
-import { FaCaretDown, FaUserTie } from "react-icons/fa";
+import { FaCaretDown, FaUser, FaUserTie } from "react-icons/fa";
 import TradingViewWidget from "../LandingPage/TradingViewWidget";
 import DashBoardData from "./DashBoardData";
 
@@ -155,8 +155,8 @@ const WithdrawTransaction = () => {
         <div className="user__info">
           <h1>WITHDRAW TRANSACTIONS</h1>
           <div>
-            <p>Username: {user.username}</p>
-            <p>Email: {user.email}</p>
+            <p> <FaUser size={18} /> <span>Username: {user.username}</span> </p>
+            <p><MdAttachEmail size={18} /> <span>Email: {user.email}</span> </p>
           </div>
         </div>
         </main>

@@ -287,16 +287,22 @@
   color: #ccc;
 }
 
+.dashboard__info .user__info p,
 .deposit__page .user__info p {
   background: #fff;
   padding: 0.5rem 1rem;
-  width: 16rem;
+  width: 17rem;
   height: 2.5rem;
   color: var(--background-primary);
   border-radius: 0.5rem;
   white-space: nowrap;
   font-weight: bold;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
 }
+
+
 
 .deposit__page .account__section {
   display: flex;
@@ -442,6 +448,8 @@
     flex-direction: column;
     gap: 2rem;
   }
+
+
 
   .deposit__page .user__info .userinfoheader {
     margin-left: 2rem;

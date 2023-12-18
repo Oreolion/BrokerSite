@@ -10,6 +10,8 @@ import { MdOutlineSettings } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import { AiOutlineMinus } from "react-icons/ai";
 import { IoAddSharp, IoMenu } from "react-icons/io5";
+import { FaUser } from "react-icons/fa";
+import { MdAttachEmail } from "react-icons/md";
 import { FaCaretDown, FaUserTie } from "react-icons/fa";
 import TradingViewWidget from "../LandingPage/TradingViewWidget";
 
@@ -164,8 +166,8 @@ const AccountSettings = () => {
         <div className="user__info">
           <h1>Account Settings</h1>
           <div>
-            <p>Username: {user.username}</p>
-            <p>Email: {user.email}</p>
+            <p> <FaUser size={18} /> <span>Username: {user.username}</span> </p>
+            <p><MdAttachEmail size={18} /> <span>Email: {user.email}</span> </p>
           </div>
         </div>
       </main>
