@@ -191,7 +191,7 @@ const Deposit = () => {
         </main>
 
       </div>
-      <p className="footer__text">Copyright © Secure cyptocurrency Platform!</p>
+      <p className="footer__text">Copyright © Secure cryptocurrency Platform.</p>
     </>
   );
 };

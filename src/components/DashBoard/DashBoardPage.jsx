@@ -189,6 +189,8 @@ const DashBoardPage = () => {
         <TradingViewChart />
         <DashBoardData />
       </div>
+      <p className="footer__text">Copyright © Secure cryptocurrency Platform.</p>
+
     </>
   );
 };

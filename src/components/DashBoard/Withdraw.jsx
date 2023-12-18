@@ -1,4 +1,3 @@
-
 import { UserAuth } from "../AuthPage/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -12,39 +11,38 @@ import { IoAddSharp, IoMenu } from "react-icons/io5";
 import { FaCaretDown, FaUserTie } from "react-icons/fa";
 import TradingViewWidget from "../LandingPage/TradingViewWidget";
 
-
 const Withdraw = () => {
-    const { user, logout } = UserAuth();
-    const navigate = useNavigate();
-  
-    const [menu, setMenu] = useState(true);
-    const [toggle, setToggle] = useState(false);
-  
-    const handleMenuBtn = () => {
-      setToggle(!toggle);
-      setMenu(!menu);
-    };
-  
-    const navigateTo = (url) => {
-      console.log("clicked");
-      navigate(url);
-    };
-  
-    const handleLogOut = async () => {
-      try {
-        await logout();
-        navigate("/");
-        alert("You are logged out");
-      } catch (e) {
-        console.log(e.message);
-      }
-    };
-  
-    return (
-      <>
-        {menu && (
-          <>
-            <div
+  const { user, logout } = UserAuth();
+  const navigate = useNavigate();
+
+  const [menu, setMenu] = useState(true);
+  const [toggle, setToggle] = useState(false);
+
+  const handleMenuBtn = () => {
+    setToggle(!toggle);
+    setMenu(!menu);
+  };
+
+  const navigateTo = (url) => {
+    console.log("clicked");
+    navigate(url);
+  };
+
+  const handleLogOut = async () => {
+    try {
+      await logout();
+      navigate("/");
+      alert("You are logged out");
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+  return (
+    <>
+      {menu && (
+        <>
+          <div
             className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
           >
             <div className="logo">
@@ -63,7 +61,7 @@ const Withdraw = () => {
             <ul className="dashboard__navlists">
               <li>
                 <Link
-                 className="link"
+                  className="link"
                   to={`/login/dashboardpage`}
                   onClick={() => navigateTo(`/login/dashboardpage`)}
                 >
@@ -71,95 +69,136 @@ const Withdraw = () => {
                 </Link>
               </li>
               <li>
-                <Link className="link" to={`/login/deposit`} onClick={() => navigateTo(`/login/deposit`)}>
+                <Link
+                  className="link"
+                  to={`/login/deposit`}
+                  onClick={() => navigateTo(`/login/deposit`)}
+                >
                   <IoAddSharp size={20} /> <p>Deposit</p>{" "}
                 </Link>
               </li>
               <li>
-                <Link className="link"
-                to={`/login/withdraw`}
-                onClick={() => navigateTo(`/login/withdraw`)}
+                <Link
+                  className="link"
+                  to={`/login/withdraw`}
+                  onClick={() => navigateTo(`/login/withdraw`)}
                 >
                   <AiOutlineMinus size={20} /> <p>Withdraw</p>{" "}
                 </Link>
               </li>
               <li>
-                <Link className="link"
-                to={`/login/deposittransaction`}
-                onClick={() => navigateTo(`/login/deposittransaction`)}>
+                <Link
+                  className="link"
+                  to={`/login/deposittransaction`}
+                  onClick={() => navigateTo(`/login/deposittransaction`)}
+                >
                   <LuHistory size={20} /> <p> Deposit Transactions</p>
                 </Link>
               </li>
               <li>
-                <Link className="link"
-                to={`/login/withdrawtransaction`}
-                onClick={() => navigateTo(`/login/withdrawtransaction`)}>
+                <Link
+                  className="link"
+                  to={`/login/withdrawtransaction`}
+                  onClick={() => navigateTo(`/login/withdrawtransaction`)}
+                >
                   <LuHistory size={20} />
                   <p>Withdraw Transactions </p>{" "}
                 </Link>
               </li>
               <li>
-                  <Link className="link"
+                <Link
+                  className="link"
                   to={`/login/accountsettings`}
-                  onClick={() => navigateTo(`/login/accountsettings`)}>
-                    <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
-                  </Link>
-                </li>
+                  onClick={() => navigateTo(`/login/accountsettings`)}
+                >
+                  <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
+                </Link>
+              </li>
               <li onClick={handleLogOut}>
                 {" "}
                 <div className="link">
-
-                <BiLogOut size={20} /> <p>Logout</p>{" "}
+                  <BiLogOut size={20} /> <p>Logout</p>{" "}
                 </div>
               </li>
             </ul>
           </div>
-            
-        <main className="deposit__page">
-        <div className="user__info">
-          <h1>Withdraw Funds</h1>
+
+          {/* <main className="deposit__page">
+            <div id="userinfobox"  className="user__info">
+              <h1>Withdraw Funds</h1>
+              <div>
+                <p>Username: {user.username}</p>
+                <p>Email: {user.email}</p>
+              </div>
+            </div>
+          </main> */}
+        </>
+      )}
+      <div className="icons">
+        {menu && !toggle ? (
+          <MdClose className="menu-icon" size={30} onClick={handleMenuBtn} />
+        ) : (
+          <IoMenu className="close-icon" size={30} onClick={handleMenuBtn} />
+        )}
+        <IoIosNotifications size={30} className="notification-icon" />
+      </div>
+      <div className="dashboard">
+        <div id='withdraw__header' className="header">
+          <div className="user">
+            <FaUserTie className="user-img" size={30} />
+            <p>{user.email}</p>
+            <FaCaretDown size={20} />
+          </div>
+        </div>
+        <div id='withdraw__mobileheader' className="mobile-header">
+          <div className="logo">
+            <Link className="link" to={"/"}>
+              <h1>FFB</h1>
+              <p style={{ color: "white" }}>Fidelity First Brokers</p>
+            </Link>
+          </div>
+          <div className="user">
+            <FaUserTie className="user-img" size={30} />
+            <p>{user.email}</p>
+            <FaCaretDown size={20} />
+          </div>
+        </div>
+        <main className="dashboard__widget1">
+          <TradingViewWidget className="widgetbox" />
+        </main>
+      </div>
+      <main className="deposit__page">
+        <div id="userinfobox" className="user__info withdrawinfo">
+          <h1>WITHDRAW FUNDS</h1>
           <div>
             <p>Username: {user.username}</p>
             <p>Email: {user.email}</p>
           </div>
         </div>
-        </main>
-          </>
-        )}
-        <div className="icons">
-          {menu && !toggle ? (
-            <MdClose className="menu-icon" size={30} onClick={handleMenuBtn} />
-          ) : (
-            <IoMenu className="close-icon" size={30} onClick={handleMenuBtn} />
-          )}
-          <IoIosNotifications size={30} className="notification-icon" />
-        </div>
-        <div className="dashboard">
-          <div className="header">
-            <div className="user">
-              <FaUserTie className="user-img" size={30} />
-              <p>{user.email}</p>
-              <FaCaretDown size={20} />
-            </div>
-          </div>
-          <div className="mobile-header">
-            <div className="logo">
-              <Link className="link" to={"/"}>
-                <h1>FFB</h1>
-                <p style={{ color: "white" }}>Fidelity First Brokers</p>
-              </Link>
-            </div>
-            <div className="user">
-              <FaUserTie className="user-img" size={30} />
-              <p>{user.email}</p>
-              <FaCaretDown size={20} />
-            </div>
-          </div>
-          <main className="dashboard__widget1">
-            <TradingViewWidget className="widgetbox" />
-          </main>
-        </div> 
-        </>)
-}
+      </main>
+      <main className="withdraw__section">
+        <form action="">
+          <h1>Account Balance: $0.00</h1>
+          <label htmlFor="">Amount to Withdraw ($):</label>
+          <br />
+          <input type="number" placeholder="Amount to withdraw ($)" />
+          <br />
+
+          <label htmlFor="">Enter Bitcoin Wallet</label>
+          <br />
+
+          <input type="text" placeholder="Enter Bitcoin Wallet" />
+          <br />
+
+          <button>Withdraw</button>
+        </form>
+      </main>
+
+      <p className="footer__text">
+        Copyright © Secure cryptocurrency Platform.
+      </p>
+    </>
+  );
+};
 
 export default Withdraw;

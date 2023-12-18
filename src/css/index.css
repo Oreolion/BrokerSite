@@ -340,6 +340,11 @@ header {
   color: var(--primary);
 }
 
+.tradingview-widget-container1 {
+    height: 45rem;
+    width: 100%;
+}
+
 /* Trading Plan section */
 
 .tradingplansection {

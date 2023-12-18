@@ -93,6 +93,10 @@
   position: relative;
 }
 
+.dashboard #withdraw__header {
+  /* top: -9rem; */
+}
+
 .dashboard .header .user {
   flex-direction: row;
   display: flex;
@@ -214,7 +218,7 @@
   background-color: var(--secondary);
 }
 
-.tradingview-widget-container1 {
+.dashboard .tradingview-widget-container1 {
   width: 80%;
   margin-left: 24rem;
   height: 45rem;
@@ -230,6 +234,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 4rem;
+  margin-left: 9rem;
 }
 
 .dashboard__data .data__container {
@@ -242,7 +247,7 @@
   padding: 1rem;
   background-color: #fff;
   color: var(--primary);
-  width: 50rem;
+  width: 70rem;
   height: 7rem;
   justify-content: space-evenly;
   border-right: 3px solid #f9a23f;
@@ -266,6 +271,10 @@
 }
 .deposit__page .user__info h1 {
   font-size: 3rem;
+}
+
+.deposit__page .user__info .userinfoheader {
+  margin-left: 9rem;
 }
 
 .deposit__page .user__info div {
@@ -313,7 +322,7 @@
 .deposit__page .account__section form label {
   font-size: 1.6rem;
   align-self: flex-start;
-  margin-left: 4rem;
+  margin-left: 10rem;
 }
 
 .deposit__page .account__section form input {
@@ -323,27 +332,17 @@
 }
 
 .deposit__page .account__section button {
-    width: 68%;
-    margin: 2rem;
-    letter-spacing: 3px;
+  width: 68%;
+  margin: 2rem;
+  letter-spacing: 3px;
 }
-
-
-
-
-
-
-
-
-
 
 .footer__text {
-    color: var(--primary);
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+  color: var(--primary);
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
-
 
 @media (max-width: 768px) {
   .isactive {
@@ -398,17 +397,24 @@
     height: 6rem;
     width: 100vw;
     padding: 1rem 3rem;
-    /* position: fixed; */
     position: relative;
+    /* top: -18rem; */
+    /* position: fixed; */
   }
 
   .dashboard .mobile-header {
+    /* position: fixed; */
     display: flex;
     align-items: center;
     width: 100vw;
     height: 6rem;
     background-color: var(--primary);
   }
+
+  /* .dashboard #withdraw__mobileheader {
+        top: -18rem;
+
+  } */
 
   .dashboard .mobile-header .user {
     position: absolute;
@@ -437,6 +443,10 @@
     gap: 2rem;
   }
 
+  .deposit__page .user__info .userinfoheader {
+    margin-left: 2rem;
+  }
+
   .dashboard .dashboard__info {
     margin-left: 0;
     margin-top: 5rem;
@@ -447,10 +457,14 @@
     margin-left: 4rem;
   }
 
-  .tradingview-widget-container1 {
+  .dashboard .tradingview-widget-container1 {
     height: 42rem;
     margin-left: 0;
     width: 100%;
+  }
+
+  .dashboard__data {
+    margin-left: 0;
   }
 
   .dashboard__data .data__container div {
@@ -458,6 +472,7 @@
     align-items: center;
     justify-content: center;
     padding-top: 1rem;
+    width: 40rem;
   }
 
   .dashboard__data .data__container div p {
@@ -484,10 +499,10 @@
 
 @media (max-width: 480px) {
   .dashboard__nav {
-    width: 12rem;
+    width: 45%;
     letter-spacing: -0.2px;
     font-size: 1.1rem;
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .dashboard__nav .user {
@@ -551,11 +566,10 @@
   }
 }
 
-@media (min-width: 320px) and (max-width: 460px)  {
-
-    h1 {
-        font-size: 2rem;
-    }
+@media (min-width: 320px) and (max-width: 460px) {
+  h1 {
+    font-size: 2rem;
+  }
 
   .icons {
     top: 5%;
@@ -569,15 +583,11 @@
     margin-bottom: 12rem;
   }
 
-   .deposit__page .account__section form {
+  .deposit__page .account__section form {
     width: 42rem;
-
   }
 
   .deposit__page .account__section form label {
     margin-left: 7rem;
-  } 
-
-  
-  
+  }
 }

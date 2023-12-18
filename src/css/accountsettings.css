@@ -20,7 +20,218 @@
   --accent: #ff8fc8;
 }
 
+.dashboard + .deposit__page {
+  margin-bottom: 4rem;
+}
 
 /* account settings page */
 
+.settings__section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  color: #ccc;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: 10rem;
+  margin-bottom: 6rem;
+}
 
+.settings__section .right__section {
+  display: flex;
+  flex-direction: column;
+  width: 34rem;
+  align-self: flex-start;
+}
+
+.settings__section .right__section .box1,
+.settings__section .right__section .box2 {
+  background-color: var(--background-primary);
+  padding: 2rem;
+  margin-bottom: 4rem;
+  height: 14rem;
+}
+
+.settings__section .right__section .box2 {
+  width: 30rem;
+  margin-left: 2rem;
+}
+.settings__section .right__section .box1 {
+  width: 34rem;
+}
+
+.settings__section .left__section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-primary);
+  padding: 2rem;
+  width: 34rem;
+}
+
+.settings__section .left__section h2 {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 2rem;
+}
+.settings__section .left__section .usericon__box {
+  margin-bottom: 2rem;
+}
+
+.settings__section .left__section .usericon__box > * {
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+}
+
+.settings__section .left__section .inner__box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settings__section .left__section .inner__box form label {
+  font-size: 1.4rem;
+}
+.settings__section .left__section .inner__box form input {
+  height: 3rem;
+}
+
+.settings__section .left__section .inner__box form .upload {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.settings__section .left__section .inner__box form button {
+  width: 15rem;
+}
+
+.settings__section .right__section h2 {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 2rem;
+}
+
+.settings__section .right__section button {
+  width: 15rem;
+  margin-bottom: 2rem;
+}
+
+.settings__section .right__section .box2 .box {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.settings__section .right__section .inner__box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Withdraw section */
+
+/* #userinfobox {
+    margin-top: 20rem;
+} */
+
+.dashboard #withdraw__header {
+  background-color: var(--primary);
+}
+
+.withdraw__section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ccc;
+  margin-left: 5rem;
+}
+
+.withdraw__section form {
+  width: 65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  padding: 3rem;
+  gap: 1rem;
+  background-color: var(--background-primary);
+}
+
+.withdraw__section form label {
+  font-size: 1.6rem;
+  align-self: flex-start;
+  margin-left: 10rem;
+}
+
+.withdraw__section form input {
+  width: 65%;
+  height: 3.5rem;
+  padding: 0 1rem;
+}
+
+.withdraw__section form button {
+  width: 68%;
+  margin: 2rem;
+  letter-spacing: 3px;
+}
+
+.deposit__page .withdrawinfo {
+  margin-left: -3rem;
+}
+
+@media (max-width: 768px) {
+  .settings__section {
+    margin-left: 0;
+  }
+
+  .settings__section .right__section {
+    margin-left: -4rem;
+  }
+
+  .withdraw__section form {
+    padding: 3rem 2rem;
+    margin-left: -5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings__section h2 {
+    text-align: center;
+  }
+
+  .settings__section .right__section {
+    width: 31rem;
+  }
+
+  .deposit__page .withdrawinfo {
+    margin-bottom: -3rem;
+  }
+
+  .deposit__page .withdrawinfo h1 {
+    margin-left: 1rem;
+    font-size: 2.2rem;
+  }
+
+  .withdraw__section form label {
+    align-self: flex-start;
+    margin-left: 16rem;
+  }
+
+  .withdraw__section form input {
+    width: 50%;
+    height: 3.5rem;
+    padding: 0 1rem;
+  }
+
+  .withdraw__section form button {
+    width: 53%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 460px) {
+  /* .deposit__page .withdrawinfo h1 {
+    margin-left: 4rem;
+    font-size: 2.2rem;
+  } */
+}

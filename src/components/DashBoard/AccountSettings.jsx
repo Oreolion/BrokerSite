@@ -1,6 +1,7 @@
 import { UserAuth } from "../AuthPage/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+// import picture from "/src/assets/images/contact.jpg"
 import "/src/css/accountsettings.css";
 import { MdClose } from "react-icons/md";
 import { IoIosNotifications, IoMdHome } from "react-icons/io";
@@ -169,11 +170,11 @@ const AccountSettings = () => {
         </div>
       </main>
       <div className="settings__section">
-        <div className="right__section">
+        <div className="left__section">
           <h2>PROFILE UPDATE</h2>
           <div className="inner__box">
             <div className="usericon__box">
-              <FaUserTie size={40} />
+              <FaUserTie size={50} />
             </div>
             <form action="">
               <label htmlFor="username">Username</label>
@@ -186,12 +187,12 @@ const AccountSettings = () => {
               <input type="text" value="" />
               <label htmlFor="telephone">Telephone</label>
               <input type="number" value="" />
-              <input type="file" />
+              <input className="upload" type="file" />
               <button>Update Info</button>
             </form>
           </div>
         </div>
-        <div className="left__section">
+        <div className="right__section">
           <div className="innerbox">
             <div className="box1">
               <h2>ACCOUNT SETTINGS</h2>
@@ -199,8 +200,8 @@ const AccountSettings = () => {
             </div>
             <div className="box2">
               <h2>CONTACT US</h2>
-              <div className="BOX">
-                <img src="" alt="" />
+              <div className="box">
+                {/* <img src={picture} alt="pic" /> */}
                 <p>Phone Numbers</p>
                 <p>+440038*****</p>
                 <p>Email Address</p>
@@ -211,7 +212,7 @@ const AccountSettings = () => {
         </div>
       </div>
 
-      <p className="footer__text">Copyright © Secure cyptocurrency Platform!</p>
+      <p className="footer__text">Copyright © Secure cryptocurrency Platform!</p>
     </>
   );
 };

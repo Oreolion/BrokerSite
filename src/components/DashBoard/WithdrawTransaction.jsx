@@ -153,7 +153,7 @@ const WithdrawTransaction = () => {
           
         <main className="deposit__page">
         <div className="user__info">
-          <h1>Withdraws History</h1>
+          <h1>WITHDRAW TRANSACTIONS</h1>
           <div>
             <p>Username: {user.username}</p>
             <p>Email: {user.email}</p>

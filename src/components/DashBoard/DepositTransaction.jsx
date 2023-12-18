@@ -114,16 +114,7 @@ const DepositTransaction = () => {
               </li>
             </ul>
           </div>
-            
-        <main className="deposit__page">
-        <div className="user__info">
-          <h1>Deposits</h1>
-          <div>
-            <p>Username: {user.username}</p>
-            <p>Email: {user.email}</p>
-          </div>
-        </div>
-        </main>
+   
           </>
         )}
         <div className="icons">
@@ -158,7 +149,17 @@ const DepositTransaction = () => {
           <main className="dashboard__widget1">
             <TradingViewWidget className="widgetbox" />
           </main>
+
         </div> 
+        <main className="deposit__page">
+        <div id="userinfobox" className="user__info withdrawinfo">
+          <h1 className="userinfoheader">DEPOSIT TRANSACTIONS</h1>
+          <div>
+            <p>Username: {user.username}</p>
+            <p>Email: {user.email}</p>
+          </div>
+        </div>
+      </main>
         <DashBoardData />
         </>)
 }
