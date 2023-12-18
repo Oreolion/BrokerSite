@@ -72,8 +72,12 @@ header {
 }
 
 .logo .link {
+  color: #888;
+}
 
-    color: #888;
+.link {
+    color: #fff;
+
 }
 
 .logo h1 {
@@ -110,12 +114,10 @@ header {
 }
 
 .header__btn .link {
-    color: #fff;
-    &:hover {
-      color: var(--primary);
-    }
-
-
+  color: #fff;
+  &:hover {
+    color: var(--primary);
+  }
 }
 
 /* NavBar */
@@ -143,7 +145,7 @@ header {
 }
 
 .navlists li .link {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
   color: #fff;
   &:hover {
     background-color: #fff;
@@ -175,7 +177,7 @@ header {
 }
 
 .homepage__container h1 {
-  color: #ddd;
+  color: #fff;
   font-size: 4rem;
   text-align: center;
   margin-bottom: 2rem;
@@ -223,6 +225,7 @@ header {
   align-items: center;
   justify-content: center;
 }
+
 
 .homepage__container .bottombox .box p {
   margin-top: 0.6rem;
@@ -341,8 +344,8 @@ header {
 }
 
 .tradingview-widget-container1 {
-    height: 45rem;
-    width: 100%;
+  height: 45rem;
+  width: 100%;
 }
 
 /* Trading Plan section */
@@ -492,7 +495,10 @@ footer p {
   }
 
   .widgetbox {
-    left: 18%;
+    left: 0%;
+    width: 100%;
+    bottom: -30rem;
+    z-index: 111;
   }
 
   #menubtn {
@@ -500,7 +506,7 @@ footer p {
     color: #888;
     z-index: 11111;
     position: fixed;
-    top: 6%;
+    top: 5%;
     right: 4%;
   }
 
@@ -513,7 +519,7 @@ footer p {
   .mobile__menu .link {
     color: #fff;
     &:hover {
-        color: var(--primary);
+      color: var(--primary);
     }
   }
 
@@ -583,7 +589,7 @@ footer p {
 
   .homepagesection2 {
     flex-direction: column;
-    padding-left: 1rem;
+    padding-left: .3rem;
   }
 
   .homepagesection2 .box1,
@@ -612,4 +618,24 @@ footer p {
     text-align: center;
     gap: 2rem;
   }
+}
+
+@media (max-width: 480px) {
+    .homepage__container .bottombox .box p {
+        display: none;
+      }
+
+      .homepagesection2 .box2 h1 {
+        font-size: 2rem;
+      }
+
+      .tradingplansection h1 {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+      }
+
+
+}
+
+@media (min-width: 320px) and (max-width: 460px) {
 }

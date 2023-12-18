@@ -1,6 +1,6 @@
 import picture1 from "/src/assets/images/istockphoto-1307254034-170667a.webp";
 import picture2 from "/src/assets/images/micheile-henderson-ZVprbBmT8QA-unsplash.jpg";
-import picture3 from "/src/assets/images/pexels-alesia-kozik-6771120.jpg";
+import picture3 from "/src/assets/images/9d6f3587-8dbb-4902-9b59-56bdb00781c9.avif";
 import picture4 from "/src/assets/images/BestRewards.png";
 import picture5 from "/src/assets/images/SWAP.png";
 import picture6 from "/src/assets/images/payments.png";

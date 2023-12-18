@@ -11,6 +11,7 @@
 /* service section 1 */
 
 .servicesection1 {
+  border-top: 2rem solid var(--background-primary);
   background-color: var(--background-secondary);
   color: #ccc;
   display: flex;
@@ -90,12 +91,13 @@
   font-size: 2.6rem;
   color: #ccc;
   margin-bottom: 1rem;
+  margin-left: 2rem;
 }
 
 .servicesection2 .box {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .servicesection2 .box .innerbox {
@@ -103,7 +105,7 @@
   flex-direction: row;
   gap: 3rem;
   color: #ccc;
-  flex: 1 1 40%;
+  padding-left: 2rem;
 }
 
 .servicesection2 .box .innerbox .box1,
@@ -115,6 +117,7 @@
   align-items: center;
   justify-content: center;
   height: 36rem;
+  min-height: 36rem;
 }
 
 .servicesection2 .box .innerbox .box1 h4,
@@ -122,6 +125,7 @@
   max-width: 30rem;
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  margin-left: 2rem;
 }
 
 .servicesection2 .box .innerbox .box1 p,
@@ -133,17 +137,21 @@
   background-color: var(--background-secondary);
   width: 50%;
   border-radius: 8px;
+  margin-left: 2rem;
 }
 
 .servicesection2 .box .innerbox .infobox {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 .servicesection2 .box .innerbox .box1 .imgbox,
 .servicesection2 .box .innerbox .box2 .imgbox {
   height: 60%;
-  flex: 1 1 20rem;
+  /* flex: 1 1 20rem; */
+  width: 50%;
+  margin-right: 2rem;
 }
 
 .servicesection2 .box .innerbox img {
@@ -154,9 +162,13 @@
 
 .servicesection2 .box .innerbox button {
   width: 15rem;
+  margin-left: 2rem;
 }
 
 @media (max-width: 760px) {
+  .servicesection1 {
+    margin-top: 2rem;
+  }
   .servicesection1 .box {
     flex-direction: column;
     height: 45rem;
@@ -182,5 +194,79 @@
     flex-direction: column;
   }
 
+  .servicesection2 h1 {
+    font-size: 2rem;
+  }
 
+  .servicesection2 .box .innerbox .box1,
+  .servicesection2 .box .innerbox .box2 {
+    height: 40rem;
+  }
+
+  .servicesection1 .box + .box h1 {
+    margin-left: 8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .servicesection1 .box h1 {
+    font-size: 1.7rem;
+  }
+
+  .servicesection1 .box p {
+    font-size: 1.3rem;
+  }
+  .servicesection1 .box + .box h1 {
+    margin-left: 1rem;
+  }
+
+  .servicesection2 .box .innerbox button {
+    width: 11rem;
+    margin-left: 1rem;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .servicesection2 .box .innerbox .box1 .imgbox,
+  .servicesection2 .box .innerbox .box2 .imgbox {
+    height: 18rem;
+    width: 50%;
+  }
+
+  .servicesection2 h1 {
+    font-size: 1.8rem;
+  }
+
+  .servicesection2 .box .innerbox .box1 h4,
+  .servicesection2 .box .innerbox .box2 h4 {
+    margin-left: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .servicesection2 .box .innerbox .box1 p,
+  .servicesection2 .box .innerbox .box2 p {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 460px) {
+  .servicesection1 {
+    margin-top: 6rem;
+  }
+
+  .servicesection1 .box p {
+    font-size: 1rem;
+  }
+
+  .servicesection2 .box .innerbox .box1,
+  .servicesection2 .box .innerbox .box2 {
+    flex: 1 1 50%;
+  }
+
+  .servicesection2 .box .innerbox button {
+    width: 9rem;
+    margin-left: 1rem;
+    white-space: nowrap;
+    text-align: center;
+  }
 }

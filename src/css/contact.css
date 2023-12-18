@@ -96,7 +96,7 @@
 }
 
 .contactsection2 .innerbox .box .icon {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .contactsection2 button {
@@ -128,8 +128,6 @@
   max-width: 48rem;
 }
 
-
-
 .contactsection3 .innerbox p {
   font-size: 1.5rem;
 }
@@ -153,5 +151,45 @@
 }
 
 .contactsection4 iframe {
-    border-radius: 4rem;
+  border-radius: 4rem;
+}
+
+@media (max-width: 480px) {
+  .contactsection1 {
+    height: 35rem;
+    color: #ccc;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .contactsection1 h1 {
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .contactsection1 button {
+    height: 4rem;
+  }
+
+  .contactsection2 h1 {
+    font-size: 2rem;
+    white-space: nowrap;
+  }
+
+  .contactsection2 p {
+    font-size: 1.4rem;
+  }
+
+  .contactsection2 .innerbox .box {
+   padding: 0 1rem;
+   text-align: center;
+   max-width: 30rem;
+  }
+
+  .contactsection2 .innerbox .box h4 {
+    white-space: nowrap;
+    font-size: 2rem;
+  }
+  
 }

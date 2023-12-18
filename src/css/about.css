@@ -63,7 +63,7 @@ button,
 /* about section 1 */
 
 .aboutsection1 {
-  padding-left: 4.5rem;
+    /* padding-left: 4.5rem; */
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -76,6 +76,8 @@ button,
   flex-direction: column;
   justify-content: center;
   flex: 1 1 40%;
+  /* padding-left: 4.5rem; */
+
 }
 
 .aboutsection1 .box2 {
@@ -94,7 +96,7 @@ button,
 
 .aboutsection1 .box1 p {
   max-width: 40rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
@@ -213,7 +215,7 @@ button,
   flex-wrap: wrap;
   gap: 3rem;
   flex: 1 1 38rem;
-  padding: 6rem 5%;
+  padding: 4rem 5%;
 }
 
 .aboutsection3 h1 {
@@ -318,7 +320,7 @@ button,
 
   .aboutsection1 {
     flex-direction: column;
-    gap: 5rem;
+    gap: 3rem;
   }
 
   .aboutsection1 .box1 {
@@ -330,12 +332,13 @@ button,
   }
 
   .aboutsection1 .box1 p {
-    font-size: 1.4rem;
-    max-width: 50rem;
+    font-size: 1rem;
   }
 
   .aboutsection1 .box2 {
     padding: 0;
+    margin-top: 2rem;
+    padding-left: 2.5rem;
   }
 
   .aboutsection1 .box2 .img__box {
@@ -378,6 +381,14 @@ button,
     height: 100%;
   }
 
+  .aboutsection3 {
+    gap: 2rem;
+  }
+
+  .aboutsection3 h1 {
+    text-align: center;
+  }
+
   .aboutsection4 {
     flex-direction: column;
   }
@@ -398,4 +409,41 @@ button,
   }
 
   
+}
+
+
+@media (max-width: 480px) {
+
+    .aboutsection1 .box1 p {
+        max-width: 44rem;
+      }
+
+      .aboutsection1 .box1 {
+        margin-left: -1rem;
+      }
+
+      .aboutsection2 {
+        gap: 8rem;
+      }
+
+      .aboutsection2 .topbox {
+        margin-top: 3rem;
+      }
+    
+
+      .aboutsection2 .topbox p {
+        font-size: 1.3rem;
+      }
+    
+      .aboutsection2 .bottombox {
+        display: flex;
+        gap: 5rem;
+
+    }
+      
+
+}
+
+@media (min-width: 320px) and (max-width: 460px) {
+
 }
