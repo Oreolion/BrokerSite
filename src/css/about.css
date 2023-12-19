@@ -336,7 +336,7 @@ button,
   }
 
   .aboutsection1 .box1 p {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .aboutsection1 .box2 {
@@ -417,8 +417,9 @@ button,
 
 
 @media (max-width: 480px) {
-
+  
     .aboutsection1 .box1 p {
+        font-size: 1.3rem;
         max-width: 44rem;
       }
 
