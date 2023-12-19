@@ -13,7 +13,7 @@
 .pricingh1 {
   font-size: 3rem;
   text-align: center;
-  color: #888;
+  color: var(--primary);
   margin-top: 2rem;
 }
 

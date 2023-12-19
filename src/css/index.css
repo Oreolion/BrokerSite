@@ -407,6 +407,7 @@ header {
 
 .tradingplansection .innerbox .box button {
   width: 13rem;
+  min-height: 4rem;
 }
 
 /* Homepage section 4 */
