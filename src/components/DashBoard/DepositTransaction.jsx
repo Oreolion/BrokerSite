@@ -42,6 +42,87 @@ const DepositTransaction = () => {
   
     return (
       <>
+      <div
+      className="dashboard__nav mobile"
+    //    className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
+       >
+        <div className="logo">
+          <Link className="link" to={"/"}>
+            <h1>FFB</h1>
+            <p>Fidelity First Brokers</p>
+          </Link>
+        </div>
+        <div className="user">
+          <FaUserTie size={40} />
+          <div className="user__info">
+            <p>{user.email}</p>
+            <p>$0.00</p>
+          </div>
+        </div>
+        <ul className="dashboard__navlists">
+          <li>
+            <Link
+              className="link"
+              to={`/login/dashboardpage`}
+              onClick={() => navigateTo(`/login/dashboardpage`)}
+            >
+              <IoMdHome size={20} /> <p>Dashboard</p>
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link"
+              to={`/login/deposit`}
+              onClick={() => navigateTo(`/login/deposit`)}
+            >
+              <IoAddSharp size={20} /> <p>Deposit</p>{" "}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link"
+              to={`/login/withdraw`}
+              onClick={() => navigateTo(`/login/withdraw`)}
+            >
+              <AiOutlineMinus size={20} /> <p>Withdraw</p>{" "}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link"
+              to={`/login/deposittransaction`}
+              onClick={() => navigateTo(`/login/deposittransaction`)}
+            >
+              <LuHistory size={20} /> <p> Deposit Transactions</p>
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link"
+              to={`/login/withdrawtransaction`}
+              onClick={() => navigateTo(`/login/withdrawtransaction`)}
+            >
+              <LuHistory size={20} />
+              <p>Withdraw Transactions </p>{" "}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link"
+              to={`/login/accountsettings`}
+              onClick={() => navigateTo(`/login/accountsettings`)}
+            >
+              <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
+            </Link>
+          </li>
+          <li onClick={handleLogOut}>
+            {" "}
+            <div className="link">
+              <BiLogOut size={20} /> <p>Logout</p>{" "}
+            </div>
+          </li>
+        </ul>
+      </div>
         {menu && (
           <>
             <div
