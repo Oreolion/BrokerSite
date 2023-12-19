@@ -321,8 +321,8 @@ header {
 
 .homepagesection3 .inner__box .box {
   padding: 3rem;
-  width: 25rem;
-  height: 23rem;
+  width: 27rem;
+  height: 26rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -449,6 +449,7 @@ footer {
   background-color: var(--background-primary);
   color: #ccc;
   padding: 5rem 7%;
+  border-bottom: 1px solid var(--secondary);
 }
 
 footer .inner__footer {
@@ -456,6 +457,8 @@ footer .inner__footer {
   flex-direction: row;
   gap: 7rem;
   margin-bottom: 4rem;
+  border-top: 1px solid var(--secondary);
+  padding-top: 2rem;
 }
 
 footer .inner__footer .box {
@@ -617,6 +620,11 @@ footer p {
     font-size: 1.1rem;
   }
 
+  .homepagesection4 button {
+    width: 13rem;
+    height: 5rem;
+  }
+
   footer .inner__footer {
     flex-direction: column;
     text-align: center;
@@ -637,7 +645,16 @@ footer p {
     margin-bottom: 2rem;
     font-size: 2rem;
   }
+
+  .homepagesection4 button {
+    width: 11rem;
+    height: 4rem;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 460px) {
+  .homepagesection4 button {
+    width: 14rem;
+    height: 4rem;
+  }
 }
