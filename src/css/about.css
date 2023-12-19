@@ -70,6 +70,7 @@ button,
     /* padding-left: 4.5rem; */
   display: flex;
   flex-direction: row;
+  /* justify-content: space-between; */
   width: 100%;
   background: var(--primary);
   color: var(--background-secondary);
@@ -85,7 +86,7 @@ button,
 }
 
 .aboutsection1 .box2 {
-  width: 50%;
+  /* width: 50%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -106,8 +107,9 @@ button,
 
 .aboutsection1 .box2 .img__box {
   width: 100%;
-  height: 50rem;
+  height: 41rem;
   margin-top: -3.1rem;
+  margin-left: 15.7rem;
   display: block;
 }
 
@@ -223,7 +225,7 @@ button,
 }
 
 .aboutsection3 h1 {
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   background: var(--background-primary);
   padding: 1rem;
   margin-bottom: 2rem;
@@ -239,7 +241,7 @@ button,
 .aboutsection3 div {
   margin-top: 3rem;
   background: var(--background-secondary);
-  height: 24rem;
+  height: 27rem;
   padding: 2rem;
   border-radius: 1rem;
 }
@@ -391,6 +393,12 @@ button,
 
   .aboutsection3 h1 {
     text-align: center;
+    font-size: 2.3rem;
+  }
+
+  .aboutsection2 .bottombox .box1 button {
+    width: 14rem;
+    height: 5rem;
   }
 
   .aboutsection4 {

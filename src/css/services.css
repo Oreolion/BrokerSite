@@ -172,8 +172,13 @@
   .servicesection1 .box {
     flex-direction: column;
     height: 45rem;
-    padding: 3rem;
+    padding: 2rem;
+    gap: 3rem;
     text-align: center;
+  }
+  .servicesection1 .imgbox {
+    width: 29rem;
+    height: 17rem;
   }
 
   .servicesection1 .box h1 {
@@ -181,32 +186,40 @@
     margin-top: 2rem;
   }
 
+  .servicesection1 .box + .box h1 {
+    margin-left: 6rem;
+  }
+
+
   .servicesection1 .box p {
     font-size: 1.5rem;
   }
-
+  
   .servicesection1 .box button {
     margin: 0 auto;
     height: 5rem;
   }
-
+  
   .servicesection2 .box .innerbox {
     flex-direction: column;
   }
-
+  
   .servicesection2 h1 {
     font-size: 2rem;
   }
-
+  
   .servicesection2 .box .innerbox .box1,
   .servicesection2 .box .innerbox .box2 {
     height: 40rem;
   }
 
-  .servicesection1 .box + .box h1 {
-    margin-left: 8rem;
-  }
+
+
+  
 }
+
+
+
 
 @media (max-width: 480px) {
   .servicesection1 .box h1 {
@@ -221,10 +234,10 @@
   }
 
   .servicesection2 .box .innerbox button {
-    width: 11rem;
+    width: 16rem;
     margin-left: 1rem;
     white-space: nowrap;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .servicesection2 .box .innerbox .box1 .imgbox,
@@ -264,9 +277,9 @@
   }
 
   .servicesection2 .box .innerbox button {
-    width: 9rem;
+    width: 11rem;
     margin-left: 1rem;
     white-space: nowrap;
-    text-align: center;
   }
+
 }
