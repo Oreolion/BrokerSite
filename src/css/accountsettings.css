@@ -3,7 +3,7 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
   scroll-behavior: smooth;
   border: none;
   outline: none;
@@ -49,17 +49,17 @@
 .settings__section .right__section .box2 {
   background-color: var(--background-primary);
   padding: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   height: 14rem;
 }
 
 .settings__section .right__section .box2 {
   width: 30rem;
-  height: 22rem;
+  height: 24rem;
   margin-left: 2rem;
 }
 .settings__section .right__section .box1 {
-  width: 34rem;
+  width: 35rem;
 }
 
 .settings__section .left__section {
@@ -67,7 +67,7 @@
   flex-direction: column;
   background-color: var(--background-primary);
   padding: 2rem;
-  width: 34rem;
+  width: 37rem;
 }
 
 .settings__section .left__section h2 {
@@ -76,6 +76,8 @@
 }
 .settings__section .left__section .usericon__box {
   margin-bottom: 2rem;
+  width: 13rem;
+  height:  10rem;
 }
 
 .settings__section .left__section .usericon__box > * {
@@ -191,7 +193,7 @@
   }
 
   .settings__section .right__section {
-    margin-left: -4rem;
+    margin-left:  -1rem;
   }
 
   .withdraw__section form {

@@ -1,13 +1,18 @@
+/* @import url("https://fonts.googleapis.com/css?family=Muli|Source+Code+Pro"); */
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
   scroll-behavior: smooth;
   border: none;
   outline: none;
   text-decoration: none;
+  /* text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 :root {
@@ -57,7 +62,7 @@ button,
 
 header {
   padding: 2rem 5%;
-  height: 6rem;
+  height: 10rem;
   display: flex;
   flex-direction: row;
   gap: 3rem;
@@ -76,8 +81,7 @@ header {
 }
 
 .link {
-    color: #fff;
-
+  color: #fff;
 }
 
 .logo h1 {
@@ -193,6 +197,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  margin-bottom: 6rem;
 }
 
 .homepage__container button {
@@ -225,7 +230,6 @@ header {
   align-items: center;
   justify-content: center;
 }
-
 
 .homepage__container .bottombox .box p {
   margin-top: 0.6rem;
@@ -318,7 +322,7 @@ header {
 .homepagesection3 .inner__box .box {
   padding: 3rem;
   width: 25rem;
-  height: 17rem;
+  height: 23rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -589,7 +593,7 @@ footer p {
 
   .homepagesection2 {
     flex-direction: column;
-    padding-left: .3rem;
+    padding-left: 0.3rem;
   }
 
   .homepagesection2 .box1,
@@ -621,20 +625,18 @@ footer p {
 }
 
 @media (max-width: 480px) {
-    .homepage__container .bottombox .box p {
-        display: none;
-      }
+  .homepage__container .bottombox .box p {
+    display: none;
+  }
 
-      .homepagesection2 .box2 h1 {
-        font-size: 2rem;
-      }
+  .homepagesection2 .box2 h1 {
+    font-size: 2rem;
+  }
 
-      .tradingplansection h1 {
-        margin-bottom: 2rem;
-        font-size: 2rem;
-      }
-
-
+  .tradingplansection h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 460px) {

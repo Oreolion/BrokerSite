@@ -24,7 +24,6 @@ body {
 .login__section {
   height: 100vh;
   padding: 0;
-  /* position: relative; */
 }
 
 .left__container .logo {

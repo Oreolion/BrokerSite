@@ -1,14 +1,18 @@
+/* @import url("https://fonts.googleapis.com/css?family=Muli|Source+Code+Pro"); */
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
   scroll-behavior: smooth;
   border: none;
   outline: none;
   text-decoration: none;
-  text-transform: capitalize;
+  /* text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 :root {
