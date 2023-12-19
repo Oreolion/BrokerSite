@@ -47,6 +47,88 @@ const DashBoardPage = () => {
 
   return (
     <>
+      <div
+      className="dashboard__nav mobile"
+    //    className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
+       >
+        <div className="logo">
+          <Link className="link" to={"/"}>
+            <h1>FFB</h1>
+            <p>Fidelity First Brokers</p>
+          </Link>
+        </div>
+        <div className="user">
+          <FaUserTie size={40} />
+          <div className="user__info">
+            <p>{user.email}</p>
+            <p>$0.00</p>
+          </div>
+        </div>
+        <ul className="dashboard__navlists">
+          <li>
+            <Link
+              className="link"
+              to={`/login/dashboardpage`}
+              onClick={() => navigateTo(`/login/dashboardpage`)}
+            >
+              <IoMdHome size={20} /> <p>Dashboard</p>
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link"
+              to={`/login/deposit`}
+              onClick={() => navigateTo(`/login/deposit`)}
+            >
+              <IoAddSharp size={20} /> <p>Deposit</p>{" "}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link"
+              to={`/login/withdraw`}
+              onClick={() => navigateTo(`/login/withdraw`)}
+            >
+              <AiOutlineMinus size={20} /> <p>Withdraw</p>{" "}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link"
+              to={`/login/deposittransaction`}
+              onClick={() => navigateTo(`/login/deposittransaction`)}
+            >
+              <LuHistory size={20} /> <p> Deposit Transactions</p>
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link"
+              to={`/login/withdrawtransaction`}
+              onClick={() => navigateTo(`/login/withdrawtransaction`)}
+            >
+              <LuHistory size={20} />
+              <p>Withdraw Transactions </p>{" "}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link"
+              to={`/login/accountsettings`}
+              onClick={() => navigateTo(`/login/accountsettings`)}
+            >
+              <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
+            </Link>
+          </li>
+          <li onClick={handleLogOut}>
+            {" "}
+            <div className="link">
+              <BiLogOut size={20} /> <p>Logout</p>{" "}
+            </div>
+          </li>
+        </ul>
+      </div>
+
       {menu && (
         <>
           <div
@@ -68,7 +150,7 @@ const DashBoardPage = () => {
             <ul className="dashboard__navlists">
               <li>
                 <Link
-                 className="link"
+                  className="link"
                   to={`/login/dashboardpage`}
                   onClick={() => navigateTo(`/login/dashboardpage`)}
                 >
@@ -76,45 +158,55 @@ const DashBoardPage = () => {
                 </Link>
               </li>
               <li>
-                <Link className="link" to={`/login/deposit`} onClick={() => navigateTo(`/login/deposit`)}>
+                <Link
+                  className="link"
+                  to={`/login/deposit`}
+                  onClick={() => navigateTo(`/login/deposit`)}
+                >
                   <IoAddSharp size={20} /> <p>Deposit</p>{" "}
                 </Link>
               </li>
               <li>
-                <Link className="link"
-                to={`/login/withdraw`}
-                onClick={() => navigateTo(`/login/withdraw`)}
+                <Link
+                  className="link"
+                  to={`/login/withdraw`}
+                  onClick={() => navigateTo(`/login/withdraw`)}
                 >
                   <AiOutlineMinus size={20} /> <p>Withdraw</p>{" "}
                 </Link>
               </li>
               <li>
-                <Link className="link"
-                to={`/login/deposittransaction`}
-                onClick={() => navigateTo(`/login/deposittransaction`)}>
+                <Link
+                  className="link"
+                  to={`/login/deposittransaction`}
+                  onClick={() => navigateTo(`/login/deposittransaction`)}
+                >
                   <LuHistory size={20} /> <p> Deposit Transactions</p>
                 </Link>
               </li>
               <li>
-                <Link className="link"
-                to={`/login/withdrawtransaction`}
-                onClick={() => navigateTo(`/login/withdrawtransaction`)}>
+                <Link
+                  className="link"
+                  to={`/login/withdrawtransaction`}
+                  onClick={() => navigateTo(`/login/withdrawtransaction`)}
+                >
                   <LuHistory size={20} />
                   <p>Withdraw Transactions </p>{" "}
                 </Link>
               </li>
               <li>
-                  <Link className="link"
+                <Link
+                  className="link"
                   to={`/login/accountsettings`}
-                  onClick={() => navigateTo(`/login/accountsettings`)}>
-                    <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
-                  </Link>
-                </li>
+                  onClick={() => navigateTo(`/login/accountsettings`)}
+                >
+                  <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
+                </Link>
+              </li>
               <li onClick={handleLogOut}>
                 {" "}
                 <div className="link">
-
-                <BiLogOut size={20} /> <p>Logout</p>{" "}
+                  <BiLogOut size={20} /> <p>Logout</p>{" "}
                 </div>
               </li>
             </ul>
@@ -158,9 +250,14 @@ const DashBoardPage = () => {
           <div className="user__info">
             <h1>HI Name... Welcome!</h1>
             <div>
-            <p> <FaUser size={18} /> <span>Username: {user.username}</span> </p>
-            <p><MdAttachEmail size={18} /> <span>Email: {user.email}</span> </p>
-          </div>
+              <p>
+                {" "}
+                <FaUser size={18} /> <span>Username: {user.username}</span>{" "}
+              </p>
+              <p>
+                <MdAttachEmail size={18} /> <span>Email: {user.email}</span>{" "}
+              </p>
+            </div>
           </div>
           <div className="inner-box">
             <div className="box box1">
@@ -189,8 +286,9 @@ const DashBoardPage = () => {
         <TradingViewChart />
         <DashBoardData />
       </div>
-      <p className="footer__text">Copyright © Secure cryptocurrency Platform.</p>
-
+      <p className="footer__text">
+        Copyright © Secure cryptocurrency Platform.
+      </p>
     </>
   );
 };
