@@ -20,7 +20,6 @@ const Withdraw = () => {
   const [nav, setNav] = useState(false);
   const [notification, setNotification] = useState(false);
 
-
   const handleMenuBtn = () => {
     setToggle(!toggle);
     setMenu(!menu);
@@ -33,7 +32,6 @@ const Withdraw = () => {
   const handleNavBtn = () => {
     setNav(!nav);
   };
-
 
   const navigateTo = (url) => {
     console.log("clicked");
@@ -52,10 +50,10 @@ const Withdraw = () => {
 
   return (
     <>
-    <div
-      className="dashboard__nav mobile"
-    //    className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
-       >
+      <div
+        className="dashboard__nav mobile"
+        //    className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
+      >
         <div className="logo">
           <Link className="link" to={"/"}>
             <h1>FFB</h1>
@@ -133,36 +131,37 @@ const Withdraw = () => {
           </li>
         </ul>
       </div>
+
+      {nav && (
+        <>
+          <ul className="navigationlist">
+            <li>
+              <Link
+                className="link"
+                to={`/login/accountsettings`}
+                onClick={() => navigateTo(`/login/accountsettings`)}
+              >
+                <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
+              </Link>
+            </li>
+            <li onClick={handleLogOut}>
+              {" "}
+              <div className="link">
+                <BiLogOut size={20} /> <p>Logout</p>{" "}
+              </div>
+            </li>
+          </ul>
+        </>
+      )}
+      {notification && (
+        <>
+          <div className="notificationbox">
+            <p>You currently have no notification.</p>
+          </div>
+        </>
+      )}
       {menu && (
         <>
-        {nav && (
-            <>
-              <ul className="navigationlist">
-                <li>
-                  <Link
-                    className="link"
-                    to={`/login/accountsettings`}
-                    onClick={() => navigateTo(`/login/accountsettings`)}
-                  >
-                    <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
-                  </Link>
-                </li>
-                <li onClick={handleLogOut}>
-                  {" "}
-                  <div className="link">
-                    <BiLogOut size={20} /> <p>Logout</p>{" "}
-                  </div>
-                </li>
-              </ul>
-            </>
-          )}
-         {notification && (
-            <>
-              <div className="notificationbox">
-                <p>You currently have no notification.</p>
-              </div>
-            </>
-          )}
           <div
             className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
           >
@@ -261,17 +260,21 @@ const Withdraw = () => {
         ) : (
           <IoMenu className="close-icon" size={30} onClick={handleMenuBtn} />
         )}
-        <IoIosNotifications size={30} className="notification-icon" onClick={handleNotificationBtn} />
+        <IoIosNotifications
+          size={30}
+          className="notification-icon"
+          onClick={handleNotificationBtn}
+        />
       </div>
       <div className="dashboard">
-        <div id='withdraw__header' className="header">
+        <div id="withdraw__header" className="header">
           <div className="user">
             <FaUserTie className="user-img" size={30} />
             <p>{user.email}</p>
             <FaCaretDown size={20} onClick={handleNavBtn} />
           </div>
         </div>
-        <div id='withdraw__mobileheader' className="mobile-header">
+        <div id="withdraw__mobileheader" className="mobile-header">
           <div className="logo">
             <Link className="link" to={"/"}>
               <h1>FFB</h1>
@@ -281,7 +284,7 @@ const Withdraw = () => {
           <div className="user">
             <FaUserTie className="user-img" size={30} />
             <p>{user.email}</p>
-            <FaCaretDown size={20} onClick={handleNavBtn}/>
+            <FaCaretDown size={20} onClick={handleNavBtn} />
           </div>
         </div>
         <main className="dashboard__widget1">
@@ -292,8 +295,13 @@ const Withdraw = () => {
         <div id="userinfobox" className="user__info withdrawinfo">
           <h1>WITHDRAW FUNDS</h1>
           <div>
-            <p> <FaUser size={18} /> <span>Username: {user.username}</span> </p>
-            <p><MdAttachEmail size={18} /> <span>Email: {user.email}</span> </p>
+            <p>
+              {" "}
+              <FaUser size={18} /> <span>Username: {user.username}</span>{" "}
+            </p>
+            <p>
+              <MdAttachEmail size={18} /> <span>Email: {user.email}</span>{" "}
+            </p>
           </div>
         </div>
       </main>

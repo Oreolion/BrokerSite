@@ -135,9 +135,8 @@ const WithdrawTransaction = () => {
           </li>
         </ul>
       </div>
-        {menu && (
-          <>
-          {nav && (
+
+      {nav && (
             <>
               <ul className="navigationlist">
                 <li>
@@ -165,6 +164,14 @@ const WithdrawTransaction = () => {
               </div>
             </>
           )}
+
+
+
+
+
+        {menu && (
+          <>
+          
             <div
             className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
           >

@@ -137,9 +137,7 @@ const DashBoardPage = () => {
         </ul>
       </div>
 
-      {menu && (
-        <>
-          {nav && (
+      {nav && (
             <>
               <ul className="navigationlist">
                 <li>
@@ -168,6 +166,10 @@ const DashBoardPage = () => {
               </div>
             </>
           )}
+
+      {menu && (
+        <>
+          
 
           <div
             className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
