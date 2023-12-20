@@ -15,7 +15,8 @@ import TradingViewWidget from "../LandingPage/TradingViewWidget";
 const Deposit = () => {
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
-
+  const [notification, setNotification] = useState(false);
+  const [nav, setNav] = useState(false);
   const [menu, setMenu] = useState(true);
   const [toggle, setToggle] = useState(false);
 
@@ -23,6 +24,16 @@ const Deposit = () => {
     setToggle(!toggle);
     setMenu(!menu);
   };
+
+  const handleNotificationBtn = () => {
+    setNotification(!notification);
+  };
+
+  const handleNavBtn = () => {
+    setNav(!nav);
+  };
+
+
 
   const navigateTo = (url) => {
     console.log("clicked");
@@ -123,7 +134,36 @@ const Deposit = () => {
         </ul>
       </div>
       {menu && (
+        
         <>
+        {nav && (
+            <>
+              <ul className="navigationlist">
+                <li>
+                  <Link
+                    className="link"
+                    to={`/login/accountsettings`}
+                    onClick={() => navigateTo(`/login/accountsettings`)}
+                  >
+                    <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
+                  </Link>
+                </li>
+                <li onClick={handleLogOut}>
+                  {" "}
+                  <div className="link">
+                    <BiLogOut size={20} /> <p>Logout</p>{" "}
+                  </div>
+                </li>
+              </ul>
+            </>
+          )}
+         {notification && (
+            <>
+              <div className="notificationbox">
+                <p>You currently have no notification.</p>
+              </div>
+            </>
+          )}
           <div
             className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
           >
@@ -202,14 +242,14 @@ const Deposit = () => {
         ) : (
           <IoMenu className="close-icon" size={30} onClick={handleMenuBtn} />
         )}
-        <IoIosNotifications size={30} className="notification-icon" />
+        <IoIosNotifications size={30} className="notification-icon" onClick={handleNotificationBtn}/>
       </div>
       <div className="dashboard">
         <div className="header">
           <div className="user">
             <FaUserTie className="user-img" size={30} />
             <p>{user.email}</p>
-            <FaCaretDown size={20} />
+            <FaCaretDown size={20} onClick={handleNavBtn} />
           </div>
         </div>
         <div className="mobile-header">
@@ -222,7 +262,7 @@ const Deposit = () => {
           <div className="user">
             <FaUserTie className="user-img" size={30} />
             <p>{user.email}</p>
-            <FaCaretDown size={20} />
+            <FaCaretDown size={20} onClick={handleNavBtn}/>
           </div>
         </div>
         <main className="dashboard__widget1">

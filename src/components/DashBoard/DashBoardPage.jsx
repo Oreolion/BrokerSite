@@ -7,6 +7,7 @@ import { IoIosNotifications } from "react-icons/io";
 import { FaCaretDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { IoSettings } from "react-icons/io5";
 import { MdAttachEmail, MdClose } from "react-icons/md";
 import { IoMdHome } from "react-icons/io";
 import { LuHistory } from "react-icons/lu";
@@ -21,13 +22,20 @@ import DashBoardData from "./DashBoardData";
 const DashBoardPage = () => {
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
-
   const [menu, setMenu] = useState(true);
   const [toggle, setToggle] = useState(false);
+  const [notification, setNotification] = useState(false);
+  const [nav, setNav] = useState(false);
 
   const handleMenuBtn = () => {
     setToggle(!toggle);
     setMenu(!menu);
+  };
+  const handleNotificationBtn = () => {
+    setNotification(!notification);
+  };
+  const handleNavBtn = () => {
+    setNav(!nav);
   };
 
   const navigateTo = (url) => {
@@ -48,9 +56,9 @@ const DashBoardPage = () => {
   return (
     <>
       <div
-      className="dashboard__nav mobile"
-    //    className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
-       >
+        className="dashboard__nav mobile"
+        //    className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
+      >
         <div className="logo">
           <Link className="link" to={"/"}>
             <h1>FFB</h1>
@@ -131,6 +139,36 @@ const DashBoardPage = () => {
 
       {menu && (
         <>
+          {nav && (
+            <>
+              <ul className="navigationlist">
+                <li>
+                  <Link
+                    className="link"
+                    to={`/login/accountsettings`}
+                    onClick={() => navigateTo(`/login/accountsettings`)}
+                  >
+                    <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
+                  </Link>
+                </li>
+                <li onClick={handleLogOut}>
+                  {" "}
+                  <div className="link">
+                    <BiLogOut size={20} /> <p>Logout</p>{" "}
+                  </div>
+                </li>
+              </ul>
+            </>
+          )}
+
+          {notification && (
+            <>
+              <div className="notificationbox">
+                <p>You currently have no notification.</p>
+              </div>
+            </>
+          )}
+
           <div
             className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
           >
@@ -147,6 +185,7 @@ const DashBoardPage = () => {
                 <p>$0.00</p>
               </div>
             </div>
+
             <ul className="dashboard__navlists">
               <li>
                 <Link
@@ -219,7 +258,11 @@ const DashBoardPage = () => {
         ) : (
           <IoMenu className="close-icon" size={30} onClick={handleMenuBtn} />
         )}
-        <IoIosNotifications size={30} className="notification-icon" />
+        <IoIosNotifications
+          size={30}
+          className="notification-icon"
+          onClick={handleNotificationBtn}
+        />
       </div>
 
       <div className="dashboard">
@@ -227,7 +270,7 @@ const DashBoardPage = () => {
           <div className="user">
             <FaUserTie className="user-img" size={30} />
             <p>{user.email}</p>
-            <FaCaretDown size={20} />
+            <FaCaretDown size={20} onClick={handleNavBtn} />
           </div>
         </div>
         <div className="mobile-header">
@@ -240,7 +283,7 @@ const DashBoardPage = () => {
           <div className="user">
             <FaUserTie className="user-img" size={30} />
             <p>{user.email}</p>
-            <FaCaretDown size={20} />
+            <FaCaretDown size={20} onClick={handleNavBtn}/>
           </div>
         </div>
         <main className="dashboard__widget1">
@@ -261,6 +304,7 @@ const DashBoardPage = () => {
           </div>
           <div className="inner-box">
             <div className="box box1">
+              <IoSettings size={30} className="settings-icon" />
               <p>Account Balance:</p>
               <h2>
                 $0.<span>00</span>{" "}
@@ -268,6 +312,8 @@ const DashBoardPage = () => {
               <p> your account balance</p>
             </div>
             <div className="box box2">
+              <IoSettings size={30} className="settings-icon" />
+
               <p>Earnings:</p>
               <h2>
                 $0.<span>00</span>{" "}
@@ -275,6 +321,8 @@ const DashBoardPage = () => {
               <p> your Earnings</p>
             </div>
             <div className="box box3">
+              <IoSettings size={30} className="settings-icon" />
+
               <p>Registered Date:</p>
               <h2>
                 $0.<span>00</span>{" "}

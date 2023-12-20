@@ -103,6 +103,51 @@
   right: 6%;
 }
 
+.notificationbox {
+  height: 12rem;
+  width: 22rem;
+  padding: 2rem;
+  position: absolute;
+  color: #fff;
+  top: 11%;
+  left: 22%;
+  background: rgba(0, 0, 015, 0.5);
+  text-align: center;
+  padding-top: 3rem;
+  z-index: 111;
+}
+
+.notificationbox p {
+  font-size: 1.6rem;
+}
+
+.navigationlist {
+  height: 12rem;
+  width: 22rem;
+  padding: 2rem;
+  position: absolute;
+  color: var(--background-primary);
+  top: 11%;
+  right: 5%;
+  background: rgba(0, 0, 015, 0.5);
+  text-align: center;
+  padding-top: 1rem;
+  z-index: 1111;
+}
+
+.navigationlist li .link {
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #fff;
+  font-weight: bold;
+}
+
 .icons {
   display: flex;
   gap: 3rem;
@@ -146,6 +191,11 @@
   height: 27rem;
   margin-bottom: 1rem;
   margin-left: 3rem;
+}
+
+.settings-icon {
+  align-self: flex-end;
+  margin-right: 2rem;
 }
 
 .dashboard .dashboard__info .user__info div {
@@ -361,6 +411,24 @@
      */
   }
 
+  .notificationbox {
+    top: 13%;
+    left: 50%;
+    background: rgba(0, 0, 15, 0.5);
+    text-align: center;
+    padding-top: 3rem;
+    z-index: 11111;
+  }
+
+  .navigationlist {
+    color: var(--background-primary);
+    top: 11%;
+    right: 32%;
+    background: rgba(0, 0, 015, 0.5);
+    padding-top: 1rem;
+    z-index: 111111;
+  }
+
   .dashboard__nav .logo {
     display: none;
   }
@@ -413,12 +481,8 @@
     width: 100vw;
     height: 8rem;
     background-color: var(--primary);
+    position: relative;
   }
-
-  /* .dashboard #withdraw__mobileheader {
-        top: -18rem;
-
-  } */
 
   .dashboard .mobile-header .user {
     position: absolute;
