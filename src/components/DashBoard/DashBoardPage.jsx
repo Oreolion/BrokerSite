@@ -6,7 +6,7 @@ import { IoMenu } from "react-icons/io5";
 import { IoIosNotifications } from "react-icons/io";
 import { FaCaretDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoSettings } from "react-icons/io5";
 import { MdAttachEmail, MdClose } from "react-icons/md";
 import { IoMdHome } from "react-icons/io";
@@ -18,6 +18,7 @@ import { IoAddSharp } from "react-icons/io5";
 import TradingViewChart from "../LandingPage/TradingViewChart";
 import TradingViewWidget from "../LandingPage/TradingViewWidget";
 import DashBoardData from "./DashBoardData";
+import Loader from "../Loader";
 
 const DashBoardPage = () => {
   const { user, logout } = UserAuth();
@@ -26,6 +27,21 @@ const DashBoardPage = () => {
   const [toggle, setToggle] = useState(false);
   const [notification, setNotification] = useState(false);
   const [nav, setNav] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showComponent, setShowComponent] = useState(false);
+
+  useEffect(() => {
+    // Simulate an 8-second delay
+    const delay = 6000;
+
+    const preloaderTimeout = setTimeout(() => {
+      setIsLoading(false);
+      setShowComponent(true);
+    }, delay);
+
+    // Clear the timeout to prevent memory leaks
+    return () => clearTimeout(preloaderTimeout);
+  }, []);
 
   const handleMenuBtn = () => {
     setToggle(!toggle);
@@ -43,6 +59,11 @@ const DashBoardPage = () => {
     navigate(url);
   };
 
+  window.onscroll = () => {
+    setMenu(false);
+    setToggle(false);
+  };
+
   const handleLogOut = async () => {
     try {
       await logout();
@@ -55,91 +76,75 @@ const DashBoardPage = () => {
 
   return (
     <>
-      <div
-        className="dashboard__nav mobile"
-        //    className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
-      >
-        <div className="logo">
-          <Link className="link" to={"/"}>
-            <h1>FFB</h1>
-            <p>Fidelity First Brokers</p>
-          </Link>
-        </div>
-        <div className="user">
-          <FaUserTie size={40} />
-          <div className="user__info">
-            <p>{user.email}</p>
-            <p>$0.00</p>
-          </div>
-        </div>
-        <ul className="dashboard__navlists">
-          <li>
-            <Link
-              className="link"
-              to={`/login/dashboardpage`}
-              onClick={() => navigateTo(`/login/dashboardpage`)}
+      {isLoading ? (
+        <Loader />
+      ) : (
+        showComponent && (
+          <>
+            <div
+              className="dashboard__nav mobile"
+              //    className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
             >
-              <IoMdHome size={20} /> <p>Dashboard</p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="link"
-              to={`/login/deposit`}
-              onClick={() => navigateTo(`/login/deposit`)}
-            >
-              <IoAddSharp size={20} /> <p>Deposit</p>{" "}
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="link"
-              to={`/login/withdraw`}
-              onClick={() => navigateTo(`/login/withdraw`)}
-            >
-              <AiOutlineMinus size={20} /> <p>Withdraw</p>{" "}
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="link"
-              to={`/login/deposittransaction`}
-              onClick={() => navigateTo(`/login/deposittransaction`)}
-            >
-              <LuHistory size={20} /> <p> Deposit Transactions</p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="link"
-              to={`/login/withdrawtransaction`}
-              onClick={() => navigateTo(`/login/withdrawtransaction`)}
-            >
-              <LuHistory size={20} />
-              <p>Withdraw Transactions </p>{" "}
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="link"
-              to={`/login/accountsettings`}
-              onClick={() => navigateTo(`/login/accountsettings`)}
-            >
-              <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
-            </Link>
-          </li>
-          <li onClick={handleLogOut}>
-            {" "}
-            <div className="link">
-              <BiLogOut size={20} /> <p>Logout</p>{" "}
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      {nav && (
-            <>
-              <ul className="navigationlist">
+              <div className="logo">
+                <Link className="link" to={"/"}>
+                  <h1>FFB</h1>
+                  <p>Fidelity First Brokers</p>
+                </Link>
+              </div>
+              <div className="user">
+                <FaUserTie size={40} />
+                <div className="user__info">
+                  <p>{user.email}</p>
+                  <p>$0.00</p>
+                </div>
+              </div>
+              <ul className="dashboard__navlists">
+                <li>
+                  <Link
+                    className="link"
+                    to={`/login/dashboardpage`}
+                    onClick={() => navigateTo(`/login/dashboardpage`)}
+                  >
+                    <IoMdHome size={20} /> <p>Dashboard</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="link"
+                    to={`/login/deposit`}
+                    onClick={() => navigateTo(`/login/deposit`)}
+                  >
+                    <IoAddSharp size={20} /> <p>Deposit</p>{" "}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="link"
+                    to={`/login/withdraw`}
+                    onClick={() => navigateTo(`/login/withdraw`)}
+                  >
+                    <AiOutlineMinus size={20} /> <p>Withdraw</p>{" "}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="link"
+                    to={`/login/deposittransaction`}
+                    onClick={() => navigateTo(`/login/deposittransaction`)}
+                  >
+                    <LuHistory size={20} /> <p> Deposit Transactions</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="link"
+                    to={`/login/withdrawtransaction`}
+                    onClick={() => navigateTo(`/login/withdrawtransaction`)}
+                  >
+                    <LuHistory size={20} />
+                    <p>Withdraw Transactions </p>{" "}
+                  </Link>
+                </li>
                 <li>
                   <Link
                     className="link"
@@ -156,189 +161,223 @@ const DashBoardPage = () => {
                   </div>
                 </li>
               </ul>
-            </>
-          )}
-
-          {notification && (
-            <>
-              <div className="notificationbox">
-                <p>You currently have no notification.</p>
-              </div>
-            </>
-          )}
-
-      {menu && (
-        <>
-          
-
-          <div
-            className={`dashboard__nav isactive ${!menu ? "  open-nav" : ""}`}
-          >
-            <div className="logo">
-              <Link className="link" to={"/"}>
-                <h1>FFB</h1>
-                <p>Fidelity First Brokers</p>
-              </Link>
-            </div>
-            <div className="user">
-              <FaUserTie size={40} />
-              <div className="user__info">
-                <p>{user.email}</p>
-                <p>$0.00</p>
-              </div>
             </div>
 
-            <ul className="dashboard__navlists">
-              <li>
-                <Link
-                  className="link"
-                  to={`/login/dashboardpage`}
-                  onClick={() => navigateTo(`/login/dashboardpage`)}
-                >
-                  <IoMdHome size={20} /> <p>Dashboard</p>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="link"
-                  to={`/login/deposit`}
-                  onClick={() => navigateTo(`/login/deposit`)}
-                >
-                  <IoAddSharp size={20} /> <p>Deposit</p>{" "}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="link"
-                  to={`/login/withdraw`}
-                  onClick={() => navigateTo(`/login/withdraw`)}
-                >
-                  <AiOutlineMinus size={20} /> <p>Withdraw</p>{" "}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="link"
-                  to={`/login/deposittransaction`}
-                  onClick={() => navigateTo(`/login/deposittransaction`)}
-                >
-                  <LuHistory size={20} /> <p> Deposit Transactions</p>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="link"
-                  to={`/login/withdrawtransaction`}
-                  onClick={() => navigateTo(`/login/withdrawtransaction`)}
-                >
-                  <LuHistory size={20} />
-                  <p>Withdraw Transactions </p>{" "}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="link"
-                  to={`/login/accountsettings`}
-                  onClick={() => navigateTo(`/login/accountsettings`)}
-                >
-                  <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
-                </Link>
-              </li>
-              <li onClick={handleLogOut}>
-                {" "}
-                <div className="link">
-                  <BiLogOut size={20} /> <p>Logout</p>{" "}
+            {nav && (
+              <>
+                <ul className="navigationlist">
+                  <li>
+                    <Link
+                      className="link"
+                      to={`/login/accountsettings`}
+                      onClick={() => navigateTo(`/login/accountsettings`)}
+                    >
+                      <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
+                    </Link>
+                  </li>
+                  <li onClick={handleLogOut}>
+                    {" "}
+                    <div className="link">
+                      <BiLogOut size={20} /> <p>Logout</p>{" "}
+                    </div>
+                  </li>
+                </ul>
+              </>
+            )}
+
+            {notification && (
+              <>
+                <div className="notificationbox">
+                  <p>You currently have no notification.</p>
                 </div>
-              </li>
-            </ul>
-          </div>
-        </>
+              </>
+            )}
+
+            {menu && (
+              <>
+                <div
+                  className={`dashboard__nav isactive ${
+                    !menu ? "  open-nav" : ""
+                  }`}
+                >
+                  <div className="logo">
+                    <Link className="link" to={"/"}>
+                      <h1>FFB</h1>
+                      <p>Fidelity First Brokers</p>
+                    </Link>
+                  </div>
+                  <div className="user">
+                    <FaUserTie size={40} />
+                    <div className="user__info">
+                      <p>{user.email}</p>
+                      <p>$0.00</p>
+                    </div>
+                  </div>
+
+                  <ul className="dashboard__navlists">
+                    <li>
+                      <Link
+                        className="link"
+                        to={`/login/dashboardpage`}
+                        onClick={() => navigateTo(`/login/dashboardpage`)}
+                      >
+                        <IoMdHome size={20} /> <p>Dashboard</p>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="link"
+                        to={`/login/deposit`}
+                        onClick={() => navigateTo(`/login/deposit`)}
+                      >
+                        <IoAddSharp size={20} /> <p>Deposit</p>{" "}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="link"
+                        to={`/login/withdraw`}
+                        onClick={() => navigateTo(`/login/withdraw`)}
+                      >
+                        <AiOutlineMinus size={20} /> <p>Withdraw</p>{" "}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="link"
+                        to={`/login/deposittransaction`}
+                        onClick={() => navigateTo(`/login/deposittransaction`)}
+                      >
+                        <LuHistory size={20} /> <p> Deposit Transactions</p>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="link"
+                        to={`/login/withdrawtransaction`}
+                        onClick={() => navigateTo(`/login/withdrawtransaction`)}
+                      >
+                        <LuHistory size={20} />
+                        <p>Withdraw Transactions </p>{" "}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="link"
+                        to={`/login/accountsettings`}
+                        onClick={() => navigateTo(`/login/accountsettings`)}
+                      >
+                        <MdOutlineSettings size={20} /> <p>Account Settings</p>{" "}
+                      </Link>
+                    </li>
+                    <li onClick={handleLogOut}>
+                      {" "}
+                      <div className="link">
+                        <BiLogOut size={20} /> <p>Logout</p>{" "}
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </>
+            )}
+            <div className="icons">
+              {menu && !toggle ? (
+                <MdClose
+                  className="menu-icon"
+                  size={30}
+                  onClick={handleMenuBtn}
+                />
+              ) : (
+                <IoMenu
+                  className="close-icon"
+                  size={30}
+                  onClick={handleMenuBtn}
+                />
+              )}
+              <IoIosNotifications
+                size={30}
+                className="notification-icon"
+                onClick={handleNotificationBtn}
+              />
+            </div>
+
+            <div className="dashboard">
+              <div className="header">
+                <div className="user">
+                  <FaUserTie className="user-img" size={30} />
+                  <p>{user.email}</p>
+                  <FaCaretDown size={20} onClick={handleNavBtn} />
+                </div>
+              </div>
+              <div className="mobile-header">
+                <div className="logo">
+                  <Link className="link" to={"/"}>
+                    <h1>FFB</h1>
+                    <p style={{ color: "white" }}>Fidelity First Brokers</p>
+                  </Link>
+                </div>
+                <div className="user">
+                  <FaUserTie className="user-img" size={30} />
+                  <p>{user.email}</p>
+                  <FaCaretDown size={20} onClick={handleNavBtn} />
+                </div>
+              </div>
+              <main className="dashboard__widget1">
+                <TradingViewWidget className="widgetbox" />
+              </main>
+              <main className="dashboard__info">
+                <div className="user__info">
+                  <h1>HI Name... Welcome!</h1>
+                  <div>
+                    <p>
+                      {" "}
+                      <FaUser size={18} />{" "}
+                      <span>Username: {user.username}</span>{" "}
+                    </p>
+                    <p>
+                      <MdAttachEmail size={18} />{" "}
+                      <span>Email: {user.email}</span>{" "}
+                    </p>
+                  </div>
+                </div>
+                <div className="inner-box">
+                  <div className="box box1">
+                    <IoSettings size={30} className="settings-icon" />
+                    <p>Account Balance:</p>
+                    <h2>
+                      $0.<span>00</span>{" "}
+                    </h2>
+                    <p> your account balance</p>
+                  </div>
+                  <div className="box box2">
+                    <IoSettings size={30} className="settings-icon" />
+
+                    <p>Earnings:</p>
+                    <h2>
+                      $0.<span>00</span>{" "}
+                    </h2>
+                    <p> your Earnings</p>
+                  </div>
+                  <div className="box box3">
+                    <IoSettings size={30} className="settings-icon" />
+
+                    <p>Registered Date:</p>
+                    <h2>
+                      $0.<span>00</span>{" "}
+                    </h2>
+                    <p> Account Registered Date</p>
+                  </div>
+                </div>
+              </main>
+              <TradingViewChart />
+              <DashBoardData />
+            </div>
+            <p className="footer__text">
+              Copyright © Secure cryptocurrency Platform.
+            </p>
+          </>
+        )
       )}
-      <div className="icons">
-        {menu && !toggle ? (
-          <MdClose className="menu-icon" size={30} onClick={handleMenuBtn} />
-        ) : (
-          <IoMenu className="close-icon" size={30} onClick={handleMenuBtn} />
-        )}
-        <IoIosNotifications
-          size={30}
-          className="notification-icon"
-          onClick={handleNotificationBtn}
-        />
-      </div>
-
-      <div className="dashboard">
-        <div className="header">
-          <div className="user">
-            <FaUserTie className="user-img" size={30} />
-            <p>{user.email}</p>
-            <FaCaretDown size={20} onClick={handleNavBtn} />
-          </div>
-        </div>
-        <div className="mobile-header">
-          <div className="logo">
-            <Link className="link" to={"/"}>
-              <h1>FFB</h1>
-              <p style={{ color: "white" }}>Fidelity First Brokers</p>
-            </Link>
-          </div>
-          <div className="user">
-            <FaUserTie className="user-img" size={30} />
-            <p>{user.email}</p>
-            <FaCaretDown size={20} onClick={handleNavBtn}/>
-          </div>
-        </div>
-        <main className="dashboard__widget1">
-          <TradingViewWidget className="widgetbox" />
-        </main>
-        <main className="dashboard__info">
-          <div className="user__info">
-            <h1>HI Name... Welcome!</h1>
-            <div>
-              <p>
-                {" "}
-                <FaUser size={18} /> <span>Username: {user.username}</span>{" "}
-              </p>
-              <p>
-                <MdAttachEmail size={18} /> <span>Email: {user.email}</span>{" "}
-              </p>
-            </div>
-          </div>
-          <div className="inner-box">
-            <div className="box box1">
-              <IoSettings size={30} className="settings-icon" />
-              <p>Account Balance:</p>
-              <h2>
-                $0.<span>00</span>{" "}
-              </h2>
-              <p> your account balance</p>
-            </div>
-            <div className="box box2">
-              <IoSettings size={30} className="settings-icon" />
-
-              <p>Earnings:</p>
-              <h2>
-                $0.<span>00</span>{" "}
-              </h2>
-              <p> your Earnings</p>
-            </div>
-            <div className="box box3">
-              <IoSettings size={30} className="settings-icon" />
-
-              <p>Registered Date:</p>
-              <h2>
-                $0.<span>00</span>{" "}
-              </h2>
-              <p> Account Registered Date</p>
-            </div>
-          </div>
-        </main>
-        <TradingViewChart />
-        <DashBoardData />
-      </div>
-      <p className="footer__text">
-        Copyright © Secure cryptocurrency Platform.
-      </p>
     </>
   );
 };

@@ -14,19 +14,75 @@ import AccountSettings from "./components/DashBoard/AccountSettings";
 import DepositTransaction from "./components/DashBoard/DepositTransaction";
 import WithdrawTransaction from "./components/DashBoard/WithdrawTransaction";
 import Withdraw from "./components/DashBoard/Withdraw";
+import { useEffect, useState } from "react";
+import Loader from "./components/Loader";
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [showComponent, setShowComponent] = useState(false);
+
+  useEffect(() => {
+    // Simulate an 8-second delay
+    const delay = 6000;
+
+    const preloaderTimeout = setTimeout(() => {
+      setIsLoading(false);
+      setShowComponent(true);
+    }, delay);
+
+    // Clear the timeout to prevent memory leaks
+    return () => clearTimeout(preloaderTimeout);
+  }, []);
+
   return (
     <>
       <AuthContextProvider>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/components/About/AboutPage" element={<AboutPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/services" element={<ServicePage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/"element={
+            isLoading ? (
+                <Loader />
+              ) : (
+                <>
+                {showComponent && <Home /> }
+                  
+                </>
+              )}
+          
+           />
+          <Route
+            path="/components/About/AboutPage"
+            element={
+              isLoading ? <Loader /> : <>{showComponent && <AboutPage />}</>
+            }
+          />
+          <Route
+            path="/pricing"
+            element={
+              isLoading ? <Loader /> : <>{showComponent && <PricingPage />}</>
+            }
+          />
+          <Route
+            path="/services"
+            element={
+              isLoading ? <Loader /> : <>{showComponent && <ServicePage />}</>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              isLoading ? <Loader /> : <>{showComponent && <ContactPage />}</>
+            }
+          />
+          <Route
+            path="/login"
+            element={isLoading ? <Loader /> : <>{showComponent && <Login />}</>}
+          />
+          <Route
+            path="/signup"
+            element={
+              isLoading ? <Loader /> : <>{showComponent && <SignUp />}</>
+            }
+          />
           <Route
             path="/login/dashboardpage"
             element={
@@ -39,7 +95,7 @@ const App = () => {
             path="/login/deposit"
             element={
               <ProtectedRoute>
-                <Deposit />
+                {isLoading ? <Loader /> : <>{showComponent && <Deposit />}</>}
               </ProtectedRoute>
             }
           />
@@ -47,7 +103,7 @@ const App = () => {
             path="/login/withdraw"
             element={
               <ProtectedRoute>
-                <Withdraw />
+                {isLoading ? <Loader /> : <>{showComponent && <Withdraw />}</>}
               </ProtectedRoute>
             }
           />
@@ -55,7 +111,11 @@ const App = () => {
             path="/login/deposittransaction"
             element={
               <ProtectedRoute>
-                <DepositTransaction />
+                {isLoading ? (
+                  <Loader />
+                ) : (
+                  <>{showComponent && <DepositTransaction />}</>
+                )}
               </ProtectedRoute>
             }
           />
@@ -63,7 +123,11 @@ const App = () => {
             path="/login/withdrawtransaction"
             element={
               <ProtectedRoute>
-                <WithdrawTransaction />
+                {isLoading ? (
+                  <Loader />
+                ) : (
+                  <>{showComponent && <WithdrawTransaction />}</>
+                )}
               </ProtectedRoute>
             }
           />
@@ -71,7 +135,11 @@ const App = () => {
             path="/login/accountsettings"
             element={
               <ProtectedRoute>
-                <AccountSettings />
+                {isLoading ? (
+                  <Loader />
+                ) : (
+                  <>{showComponent && <AccountSettings />}</>
+                )}
               </ProtectedRoute>
             }
           />

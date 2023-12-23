@@ -36,6 +36,11 @@ const AccountSettings = () => {
     setNav(!nav);
   };
 
+  window.onscroll = () => {
+    setMenu(false);
+    setToggle(false);
+  };
+
 
   const navigateTo = (url) => {
     console.log("clicked");
@@ -301,7 +306,7 @@ const AccountSettings = () => {
           <h2>PROFILE UPDATE</h2>
           <div className="inner__box">
             <div className="usericon__box">
-              <FaUserTie size={50} />
+              <FaUserTie size={60} />
             </div>
             <form action="">
               <label htmlFor="username">Username</label>

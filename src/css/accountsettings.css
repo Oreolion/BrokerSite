@@ -76,14 +76,15 @@
 }
 .settings__section .left__section .usericon__box {
   margin-bottom: 2rem;
-  width: 13rem;
+  width: 10rem;
   height:  10rem;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
-.settings__section .left__section .usericon__box > * {
-  border: 1px solid #ccc;
-  padding: 1.5rem;
-}
 
 .settings__section .left__section .inner__box form {
   display: flex;

@@ -24,6 +24,29 @@
   color: #fff;
 }
 
+.loader svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    stroke: var(--primary);
+    stroke-width: 10px;
+    stroke-dasharray: 4500;
+    fill-opacity: 0;
+    animation: draw 8s ease infinite alternate;
+}
+
+
+@keyframes draw {
+    0% {
+       stroke-dashoffset: 4500;
+
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
 /* dashboard navigations */
 
 .dashboard__nav {

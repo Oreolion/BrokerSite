@@ -33,6 +33,11 @@ const Deposit = () => {
     setNav(!nav);
   };
 
+  window.onscroll = () => {
+    setMenu(false);
+    setToggle(false);
+  };
+
 
 
   const navigateTo = (url) => {

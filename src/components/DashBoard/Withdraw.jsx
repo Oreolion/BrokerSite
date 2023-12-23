@@ -38,6 +38,11 @@ const Withdraw = () => {
     navigate(url);
   };
 
+  window.onscroll = () => {
+    setMenu(false);
+    setToggle(false);
+  };
+
   const handleLogOut = async () => {
     try {
       await logout();

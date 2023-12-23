@@ -10,6 +10,7 @@ import TradingViewChart from "./TradingViewChart"
 
 
 function Home() {
+    
 
   return (
     <>
