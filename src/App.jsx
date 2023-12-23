@@ -16,6 +16,7 @@ import WithdrawTransaction from "./components/DashBoard/WithdrawTransaction";
 import Withdraw from "./components/DashBoard/Withdraw";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
+import ErrorPage from "./components/ErrorPage";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -143,6 +144,8 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+          <Route path="*" element={<ErrorPage />} />
+          <Route path="/login/*" element={<ErrorPage />} />
         </Routes>
       </AuthContextProvider>
     </>
