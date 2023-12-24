@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Lustria
+- Font Author: Copyright (c) 2011, Matthew Desmond (http://www.madtype.com | mattdesmond@gmail.com), with Reserved Font Name Lustria
+- Font Source: http://fonts.gstatic.com/s/lustria/v13/9oRONYodvDEyjuhOrCg5MtPyAcg.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
