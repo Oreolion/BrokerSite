@@ -18,7 +18,7 @@ const Login = () => {
 
     try {
         await signIn(email, password)
-        navigate("/dashboardpage")
+        navigate("/login/dashboardpage")
 
     } catch (e) {
         setError(e.message)
