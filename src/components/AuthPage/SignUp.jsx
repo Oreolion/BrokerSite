@@ -16,7 +16,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("")
+    // setError("")
     try {
         await createUser(email, password, firstname, lastname, country)
         // navigate("/dashboardpage")
